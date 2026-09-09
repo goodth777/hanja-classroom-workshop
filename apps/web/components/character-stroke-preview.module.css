@@ -1,0 +1,6 @@
+.heading { flex-wrap: wrap; align-items: center; gap: 12px 18px; }
+.heading .characterInfo { flex: 1 1 220px; min-width: 0; align-items: center; }
+.characterInfo > strong { flex: 0 0 auto; line-height: 1.2; }
+.characterText { display: grid; gap: 4px; min-width: 0; line-height: 1.5; word-break: keep-all; overflow-wrap: anywhere; }
+.characterText small { color: var(--muted); font-size: 12px; font-weight: 650; }
+.heading .expandButton { flex: 0 0 auto; width: auto; min-width: 44px; min-height: 44px; margin-left: auto; padding: 10px 14px; border-radius: 12px; font-size: 13px; white-space: nowrap; }

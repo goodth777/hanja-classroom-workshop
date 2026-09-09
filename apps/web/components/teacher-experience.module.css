@@ -1,0 +1,122 @@
+.page { --teacher-forest: #125e46; --teacher-soft: #e8f3ed; color: #19372d; }
+.topBar { width: min(1320px, 100%); margin-inline: auto; min-height: 98px; gap: 28px; border-bottom: 1px solid #23634816; }
+.topBar :global(.brand) { font-size: 21px; gap: 11px; white-space: nowrap; }
+.topBar :global(.brandStamp) { width: 43px; height: 43px; border-radius: 14px; box-shadow: 0 5px 0 #173b2b10; }
+.topBar :global(.teacherAccount) { margin-left: auto; }
+.topBar :global(.teacherAccount > div) { display: none; }
+.topBar :global(.teacherAccount > .secondaryButton) { padding: 9px 12px; min-height: 38px; font-size: 11px; border-radius: 999px; }
+.navigation { display: flex; align-items: center; gap: 6px; }
+.navigation button,.navigation summary { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 10px 14px; border: 0; border-radius: 999px; background: transparent; color: #60796d; font-size: 13px; font-weight: 800; cursor: pointer; white-space: nowrap; }
+.navigation button svg,.navigation summary svg { width: 15px; height: 15px; }
+.navigation button:hover,.navigation summary:hover { color: var(--teacher-forest); background: #ffffffb8; }
+.navigation .activeNav { color: #125e46; background: #dcefe3; }
+.toolsMenu { position: relative; }
+.toolsMenu summary { list-style: none; }
+.toolsMenu summary::-webkit-details-marker { display: none; }
+.menuChevron { width: 6px; height: 6px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg); margin: -3px 0 0 4px; }
+.toolsPopover { position: absolute; z-index: 20; top: calc(100% + 9px); left: 0; display: grid; min-width: 202px; padding: 7px; border: 1px solid #d9e7de; border-radius: 17px; background: #fff; box-shadow: 0 16px 36px #254f3d16; }
+.toolsPopover button { width: 100%; border-radius: 11px; text-align: left; }
+.workspace { width: min(1260px, 100%); margin: 0 auto; padding-top: 32px; }
+.pageContent { min-width: 0; animation: pageArrival .44s cubic-bezier(.16,1,.3,1) both; }
+.hubHeading { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin: 14px 0 40px; }
+.eyebrow { margin: 0 0 15px; color: #47816a; font-size: 10px; font-weight: 850; letter-spacing: .21em; }
+.hubHeading h1 { margin: 0; font-size: clamp(32px,3.7vw,52px); font-weight: 850; line-height: 1.18; letter-spacing: -.067em; outline: none; }
+.hubHeading h1 > span { color: #1c7052; }
+.hubLead { margin: 0 0 4px; color: #6b8276; line-height: 1.8; font-size: 13px; }
+.gameDeck { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 25px; padding: 10px 4px 24px; perspective: 1800px; }
+.gameCard { position: relative; display: flex; flex-direction: column; min-width: 0; min-height: 435px; padding: 27px 26px 19px; border: 1px solid #ffffff; border-radius: 30px; background: linear-gradient(160deg,#fff 15%,#f9fcf8 100%); box-shadow: 0 5px 0 #e0ebe28c,0 16px 29px -20px #27563f50; color: #173e30; text-align: left; cursor: pointer; transform-style: preserve-3d; transition: transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s ease,border-color .3s ease,background .3s ease; }
+.gameCard:nth-child(2) { background: linear-gradient(160deg,#fff 15%,#fafaf2 100%); }
+.gameCard:nth-child(3) { background: linear-gradient(160deg,#fff 15%,#f1f8ef 100%); }
+.cardNumber { position: absolute; top: 27px; right: 27px; font-size: 11px; font-weight: 750; color: #a1b8a9; }
+.cardCategory { font-size: 10px; font-weight: 850; letter-spacing: .015em; color: #56836d; }
+.gameArt { display: block; align-self: center; width: min(100%, 295px); margin: 5px 0 3px; transform: translateZ(30px) rotate(-2deg); transition: transform .5s cubic-bezier(.2,.8,.2,1); }
+.gameArtSvg { display: block; width: 100%; height: auto; overflow: visible; }
+.cardCopy { display: grid; gap: 7px; transform: translateZ(18px); }
+.cardLabel { color: #78937f; font-size: 11px; font-weight: 650; }
+.cardCopy > strong { font-size: clamp(22px,2.05vw,29px); font-weight: 900; letter-spacing: -.055em; line-height: 1.15; }
+.cardDescription { max-width: 230px; min-height: 39px; font-size: 12px; color: #687f71; line-height: 1.6; word-break: keep-all; }
+.cardFooter { display: flex; justify-content: space-between; align-items: center; gap: 16px; width: 100%; margin-top: 25px; padding-top: 16px; border-top: 1px solid #1b62391a; color: #315e47; font-size: 12px; font-weight: 850; transform: translateZ(15px); }
+.cardArrow { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: #e4f1e8; transition: color .3s,background .3s,transform .3s; }
+.directionIcon { width: 20px; height: 20px; }
+.hubFooter { display: flex; justify-content: space-between; align-items: center; gap: 20px; color: #799082; font-size: 11px; padding: 7px 4px 24px; }
+.hubFooter button { border: 0; padding: 9px 0 9px 14px; background: none; display: inline-flex; align-items: center; gap: 10px; color: #387058; font-size: 12px; font-weight: 800; cursor: pointer; }
+.backButton { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 8px 0; border: 0; background: transparent; color: #5e8070; font-size: 12px; font-weight: 800; cursor: pointer; }
+.backButton:hover { color: #125e46; }
+.setupHeading { display: flex; align-items: center; justify-content: space-between; gap: 25px; margin: 15px 0 27px; }
+.setupHeading h1 { margin: 0; color: #183f2f; font-size: clamp(31px,3.2vw,43px); letter-spacing: -.06em; line-height: 1.16; outline: none; }
+.setupHeading p:last-child { margin: 10px 0 0; font-size: 13px; color: #6b8475; }
+.setupArt { width: 136px; margin-top: -26px; }
+.contentPanel { background: #ffffffdb; border: 1px solid #ffffff; border-radius: 27px; box-shadow: 0 16px 50px -36px #2f66474d; overflow: hidden; }
+.contentPanel :global(.teacherSection) { padding: 28px; }
+.contentPanel :global(.teacherSectionHeader) { border-bottom-color: #24593d13; padding-bottom: 16px; }
+.contentPanel :global(.teacherSectionHeader h2) { font-size: 25px; letter-spacing: -.05em; }
+.contentPanel :global(.teacherSectionHeader .kicker) { font-size: 10px; letter-spacing: .13em; }
+.contentPanel :global(.curatedTag) { background: #edf5ee; color: #48785d; padding: 8px 12px; border: 1px solid #dceadd; }
+.lessonPanel { display: grid; grid-template-columns: minmax(0,1fr) 300px; gap: 26px; padding: 28px; }
+.lessonSource { display: grid; align-content: start; gap: 18px; min-width: 0; }
+.lessonSource :global(.lessonToolbar) { grid-template-columns: minmax(0,1fr) auto; }
+.lessonSource :global(.lessonToolbar .secondaryButton) { min-height: 48px; font-size: 12px; padding: 10px 14px; }
+.lessonSource :global(.lessonCharacterGrid) { height: 382px; border: none; padding: 3px; border-radius: 0; background: transparent; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 10px; align-content: start; }
+.lessonSource :global(.lessonCharacterGrid button) { min-height: 105px; border-radius: 18px; box-shadow: 0 3px 0 #edf0e9; border-color: #e2e9df; }
+.lessonSource :global(.lessonCharacterGrid button.inGame) { background: #e1f3e6; border-color: #75b68b; box-shadow: 0 3px 0 #cee8d6; }
+.lessonSource :global(.lessonCharacterGrid strong) { font-size: 46px; color: #1f4e37; }
+.sourceHeading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.sourceHeading strong { font-size: 14px; }
+.selectionTools { display: flex; gap: 11px; }
+.selectionTools button { border: 0; padding: 7px 0; min-height: 36px; background: none; color: #6b8775; font-size: 11px; font-weight: 750; cursor: pointer; }
+.selectionTools button:disabled { opacity: .4; cursor: default; }
+.launchSummary { display: flex; flex-direction: column; align-self: start; gap: 18px; min-width: 0; padding: 23px; border-radius: 21px; background: #edf6ef; border: 1px solid #e2eee3; }
+.launchSummary :global(.selectedSummary) { min-height: 137px; border: 0; padding: 0; background: transparent; border-radius: 0; align-content: start; }
+.launchSummary :global(.selectedSummaryTitle strong) { font-size: 15px; }
+.launchSummary :global(.selectedSummaryTitle span) { font-size: 10px; background: #d8ebde; color: #3c6d50; white-space: nowrap; }
+.launchSummary :global(.selectedSummary > p) { padding: 12px; min-height: 70px; font-size: 12px; text-align: center; color: #829589; }
+.launchSummary :global(.selectedTextChips) { max-height: 190px; overflow-y: auto; gap: 6px; align-items: flex-start; }
+.launchSummary :global(.selectedTextChips button) { padding: 7px 10px; border: 1px solid #d5e6d7; background: #fff; border-radius: 10px; font-size: 24px; }
+.launchSummary :global(.strokeTurnSetting) { display: grid; grid-template-columns: 1fr; gap: 10px; border: 0; border-top: 1px solid #dce9dd; border-radius: 0; padding: 18px 0 0; background: transparent; }
+.launchSummary :global(.strokeTurnSetting strong) { font-size: 12px; }
+.launchSummary :global(.strokeTurnSetting small) { font-size: 11px; line-height: 1.65; }
+.launchSummary :global(.strokeTurnSetting select) { width: 100%; min-height: 45px; }
+.launchSummary :global(.primaryButton) { min-height: 51px; font-size: 13px; padding: 13px 16px; border-radius: 13px; background: #176649; box-shadow: 0 4px 0 #10583e15; }
+.launchSummary :global(.primaryButton:disabled) { background: #c4d5c9; box-shadow: none; color: #fff; }
+.launchSummary :global(.notice) { margin: 0; color: #6b8475; font-size: 11px; line-height: 1.6; }
+.summaryFoot { margin: -8px 0 0; color: #7c9383; text-align: center; font-size: 10px; line-height: 1.6; }
+.quizSummaryTitle { display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: 14px; }
+.quizSummaryTitle span { font-size: 11px; color: #63836e; }
+.launchSummary :global(.quizQuestionCountField) { display: grid; gap: 10px; margin: 0; padding: 0; border: 0; background: transparent; }
+.launchSummary :global(.quizQuestionCountField > span) { font-size: 12px; font-weight: 850; }
+.launchSummary :global(.quizQuestionCountField select) { width: 100%; min-height: 46px; border: 1px solid #d8e5d8; background: white; border-radius: 12px; padding: 9px 12px; }
+.launchSummary :global(.quizQuestionCountField small) { font-size: 11px; line-height: 1.65; color: #7a907e; }
+.gameRule { display: grid; gap: 7px; padding-top: 16px; border-top: 1px solid #dce9dd; }
+.gameRule strong { font-size: 12px; color: #3d654d; }
+.gameRule span { font-size: 11px; color: #7a907e; line-height: 1.7; }
+.page button:focus-visible,.page summary:focus-visible { outline: 3px solid #7ca98a; outline-offset: 4px; }
+@media (hover:hover) and (prefers-reduced-motion:no-preference) {
+  .gameCard:hover { transform: translateY(-15px) rotateX(3deg); border-color: #c4dfcf; box-shadow: 0 7px 0 #ccdfd293,0 32px 45px -24px #234d3b5c; }
+  .gameCard:nth-child(1):hover { transform: translateY(-15px) rotateX(3deg) rotateY(3deg); }
+  .gameCard:nth-child(3):hover { transform: translateY(-15px) rotateX(3deg) rotateY(-3deg); }
+  .gameCard:hover .gameArt { transform: translateY(-8px) translateZ(45px) rotate(1deg); }
+  .gameCard:hover .cardArrow { color: #fff; background: #176c4c; transform: translateX(3px); }
+}
+@keyframes pageArrival { from { opacity: 0; transform: translateY(20px) scale(.987); } to { opacity: 1; transform: none; } }
+@media(min-width:1450px) { .workspace { padding-top: 43px; } .gameCard { min-height: 471px; } .gameArt { width: 310px; margin-top: 12px; margin-bottom: 13px; } }
+@media(max-width:1100px) { .topBar { gap: 16px; flex-wrap: wrap; padding-block: 17px; } .navigation { order: 3; width: 100%; justify-content: center; border-top: 1px solid #285c4010; padding-top: 10px; } .topBar :global(.teacherAccount) { gap: 10px; } .hubHeading { margin-top: 0; } .hubLead { font-size: 11px; } .gameDeck { gap: 18px; } .gameCard { padding: 24px 20px 18px; min-height: 405px; } .cardNumber { right: 21px; top: 24px; } .lessonPanel { grid-template-columns: minmax(0,1fr) 280px; padding: 23px; gap: 23px; } .lessonSource :global(.lessonCharacterGrid) { grid-template-columns: repeat(3,minmax(0,1fr)); } }
+@media(max-width:760px) { .workspace { padding-top: 24px; } .hubHeading { align-items: flex-start; gap: 18px; flex-direction: column; margin-bottom: 24px; } .hubHeading h1 { font-size: 37px; } .hubLead { font-size: 12px; line-height: 1.7; } .hubLead br { display: none; } .gameDeck { grid-template-columns: 1fr; gap: 22px; padding-inline: 0; } .gameCard { display: grid; grid-template-columns: minmax(0,1fr) 42%; min-height: 222px; padding: 25px; } .cardCategory { grid-column: 1; align-self: start; } .gameArt { grid-column: 2; grid-row: 1 / 4; width: 100%; margin: 0; align-self: center; } .cardCopy { grid-column: 1; padding-top: 20px; } .cardCopy > strong { font-size: 24px; } .cardLabel { display: none; } .cardDescription { font-size: 11px; min-height: auto; } .cardFooter { grid-column: 1; margin-top: 17px; padding-top: 12px; font-size: 11px; } .cardNumber { right: 20px; top: 17px; } .hubFooter > span { display: none; } .hubFooter { justify-content: flex-end; } .lessonPanel { grid-template-columns: 1fr; padding: 20px; } .lessonSource :global(.lessonCharacterGrid) { grid-template-columns: repeat(4,minmax(0,1fr)); height: 310px; } .launchSummary { width: 100%; } .launchSummary :global(.selectedSummary) { min-height: 90px; } .launchSummary :global(.selectedTextChips) { max-height: 100px; } .setupArt { width: 104px; margin-top: -10px; } .setupHeading { gap: 15px; } .setupHeading h1 { font-size: 33px; } .setupHeading p:last-child { line-height: 1.6; font-size: 12px; } .contentPanel :global(.teacherSection) { padding: 20px; } .contentPanel :global(.teacherSectionHeader h2) { font-size: 23px; } .navigation { gap: 0; justify-content: space-between; } .navigation button,.navigation summary { gap: 6px; padding: 10px 9px; font-size: 12px; } .toolsPopover { left: auto; right: 0; } }
+@media(max-width:400px) { .topBar :global(.brand) { font-size: 17px; } .topBar :global(.teacherAccount .statusPill) { font-size: 9px; } .hubHeading h1 { font-size: 32px; } .gameCard { padding: 21px; grid-template-columns: minmax(0,1fr) 39%; } .cardCopy > strong { font-size: 21px; } .lessonSource :global(.lessonCharacterGrid) { grid-template-columns: repeat(3,minmax(0,1fr)); } .navigation button,.navigation summary { font-size: 11px; gap: 5px; } }
+/* Keep all three game actions on the first screen of a typical short laptop. */
+@media(min-width:1101px) and (max-height:820px) {
+  .topBar { height: 76px; min-height: 76px; }
+  .workspace { padding-top: 18px; }
+  .hubHeading { margin: 0 0 20px; }
+  .hubHeading h1 { font-size: 38px; }
+  .eyebrow { margin-bottom: 8px; }
+  .gameDeck { padding: 8px 4px 16px; }
+  .gameCard { min-height: 340px; padding: 20px 22px 15px; }
+  .gameArt { width: 210px; margin: 0; }
+  .cardNumber { top: 20px; }
+  .cardCopy { gap: 5px; }
+  .cardCopy > strong { font-size: 25px; }
+  .cardDescription { min-height: 34px; }
+  .cardFooter { margin-top: 12px; padding-top: 12px; }
+  .hubFooter { padding: 0 4px; }
+}
+@media(prefers-reduced-motion:reduce) { .pageContent { animation: none; } .gameCard,.gameArt,.cardArrow { transition: none; } }

@@ -1,0 +1,4 @@
+Font Awesome Free 7.3.1 icons by Fonticons, Inc. https://fontawesome.com
+Icons licensed under CC BY 4.0: https://creativecommons.org/licenses/by/4.0/
+Package code licensed under MIT: https://fontawesome.com/license/free
+Selected solid SVG icons are rendered locally without modification to their paths.

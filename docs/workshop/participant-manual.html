@@ -1,0 +1,745 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>참여자 상세 매뉴얼</title><style>
+:root{--ink:#18372e;--green:#11644e;--muted:#60746d;--line:#d8e6df;--soft:#eff7f3;--paper:#fff;--amber:#fff3d6}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:#eaf2ee;color:var(--ink);font:16px/1.8 'Malgun Gothic','맑은 고딕',sans-serif;word-break:keep-all;overflow-wrap:anywhere}a{color:var(--green);text-underline-offset:3px}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #cf9520;outline-offset:4px}button,summary{cursor:pointer}button{font:inherit}.shell{display:grid;grid-template-columns:270px minmax(0,1fr);max-width:1450px;margin:auto;gap:30px;padding:28px}.rail{position:sticky;top:28px;align-self:start;max-height:calc(100vh - 56px);overflow:auto;padding:14px 12px 24px}.brand{font-size:13px;letter-spacing:.15em;font-weight:800;color:var(--green)}.rail h2{font-size:23px;line-height:1.4;margin:10px 0 20px}.rail a{display:block;font-size:12px;line-height:1.6;padding:6px 8px;text-decoration:none;border-radius:6px}.rail a:hover{background:#dcebe3}.rail .tools{border-top:1px solid var(--line);padding-top:12px;margin-top:15px}.print-button,.copy{border:1px solid var(--line);border-radius:7px;background:white;color:var(--green);font-weight:700}.print-button{padding:9px 12px;margin:10px 0}main{min-width:0;max-width:960px}.sheet{background:var(--paper);padding:48px 54px;margin:0 0 24px;border-radius:18px;box-shadow:0 3px 16px #0d372609;scroll-margin-top:20px}.page-tag{font-size:10px;letter-spacing:.13em;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:24px;display:flex;justify-content:space-between}.sheet h1{font-size:43px;line-height:1.3;letter-spacing:-.04em;max-width:650px;margin:30px 0}.sheet h2{font-size:27px;line-height:1.35;letter-spacing:-.035em;margin:0 0 24px}.sheet h3{font-size:19px;margin:25px 0 10px}.sheet p{margin:12px 0}.sheet ul,.sheet ol{padding-left:24px;margin:13px 0}.sheet li{padding-left:3px;margin:7px 0}.sheet strong{color:#103e2f}.sheet blockquote{border-left:4px solid #dba53c;background:var(--amber);margin:20px 0;padding:12px 18px;font-size:14px}.sheet blockquote p{margin:0}.sheet table{width:100%;border-collapse:collapse;font-size:13px;margin:18px 0;table-layout:fixed}.sheet th{background:var(--soft);color:var(--green);text-align:left}.sheet th,.sheet td{border-bottom:1px solid var(--line);padding:9px 10px;vertical-align:top;overflow-wrap:anywhere;word-break:normal}.sheet td:first-child{font-weight:700}.sheet pre{background:#f2f6f4;border:1px solid var(--line);border-radius:8px;padding:16px;margin:14px 0;position:relative;white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-all;font-size:12px;line-height:1.65;max-height:500px;overflow:auto}.sheet pre:has(.copy){padding-top:46px}code{font-family:Consolas,'Malgun Gothic',monospace;font-size:.92em;color:#225341}.copy{position:absolute;right:8px;top:7px;padding:3px 10px;font-size:11px}.sheet details{border:1px solid var(--line);border-radius:8px;padding:12px;margin-top:15px}.sheet summary{font-weight:700;color:var(--green)}.sheet input[type=checkbox]{accent-color:var(--green)}.cover{border-top:8px solid var(--green);min-height:700px}.cover p:first-of-type{font-size:23px;font-weight:700}.cover:after{content:'00 준비 → 01 코드 → 02 저장소 → 03 웹 → 04 서버 → 05 연결 → 06 확인';display:block;margin-top:40px;border-top:1px solid var(--line);padding-top:22px;font-size:12px;font-weight:700;color:var(--green)}.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#123e31;color:white;padding:10px 20px;border-radius:30px;font-size:14px;z-index:10}.toast:empty{display:none}.print-note{display:none}
+@media(max-width:950px){.shell{grid-template-columns:1fr;padding:14px;gap:10px}.rail{position:static;max-height:220px;padding:10px}.rail nav{display:grid;grid-template-columns:1fr 1fr}.rail h2{margin:0 0 6px}.rail .tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center}.sheet{padding:28px 22px;border-radius:12px}.sheet h1{font-size:34px}.sheet h2{font-size:25px}.sheet table{font-size:11px}.sheet th,.sheet td{padding:7px 6px}}
+@page{size:A4;margin:15mm 16mm 17mm}
+@media print{html{scroll-behavior:auto}body{background:white;font-size:10pt;line-height:1.67;color:#17382d}.shell{display:block;padding:0;max-width:none}.rail,.copy,.toast,.sql-appendix{display:none!important}main{max-width:none}.sheet{border-radius:0;box-shadow:none;padding:0;margin:0;break-after:page;min-height:0}.sheet:last-child{break-after:auto}.page-tag{font-size:7pt;margin-bottom:6mm;padding-bottom:3mm}.sheet h1{font-size:30pt;margin:12mm 0 8mm}.sheet h2{font-size:20pt;margin:0 0 6mm}.sheet h3{font-size:12pt;margin:5mm 0 2mm}.sheet p{margin:2.5mm 0}.sheet ul,.sheet ol{margin:3mm 0;padding-left:6mm}.sheet li{margin:1.8mm 0}.sheet table{font-size:8pt;margin:4mm 0;line-height:1.5}.sheet th,.sheet td{padding:2mm 2.5mm}.sheet blockquote{font-size:9pt;margin:4mm 0;padding:3mm 4mm}.sheet pre,.sheet pre:has(.copy){padding:3mm;margin:3mm 0;font-size:8pt;max-height:none;overflow:visible;line-height:1.5}.sheet h2,.sheet h3{break-after:avoid}.sheet table,.sheet pre,.sheet blockquote,.sheet li{break-inside:avoid}.cover{border-top:3mm solid var(--green);padding-top:5mm}.cover p:first-of-type{font-size:16pt}.cover:after{margin-top:20mm;font-size:9pt;padding-top:6mm}.sheet a{color:inherit;text-decoration:none}.print-note{display:block;font-size:8pt;color:#62766d}}
+</style></head><body><div class="shell"><aside class="rail"><div class="brand">HANJA CLASSROOM</div><h2>참여자 상세 매뉴얼</h2><nav><a href="#section-0">내 계정으로 한자 게임 설치하기</a><a href="#section-1">먼저 전체 흐름 이해하기</a><a href="#section-2">00 준비물과 안전한 기록</a><a href="#section-3">00 GitHub 가입과 나머지 서비스 로그인</a><a href="#section-4">01 GitHub에서 내 코드 사본 만들기</a><a href="#section-5">02 Supabase 프로젝트와 키 준비하기</a><a href="#section-6">02 데이터베이스 구조 설치하기</a><a href="#section-7">03 Vercel에 웹 먼저 배포하기</a><a href="#section-8">03 Vercel 공개 설정과 첫 배포</a><a href="#section-9">03 입력값 대조와 Deploy 버튼 누르기</a><a href="#section-10">04 Render에 실시간 서버 만들기</a><a href="#section-11">04 서버 주소와 정상 응답 확인하기</a><a href="#section-12">05 웹과 서버 주소 연결하기</a><a href="#section-13">05 Supabase 로그인 주소 설정하기</a><a href="#section-14">06 첫 교사 로그인과 저장 확인</a><a href="#section-15">06 휴대폰으로 획배틀 시험하기</a><a href="#section-16">06 스피드 퀴즈와 한자 지렁이 확인</a><a href="#section-17">06 기록과 최종 완료 점검</a><a href="#section-18">문제가 생겼을 때 확인 순서</a><a href="#section-19">배포 실패와 도움 요청하기</a><a href="#section-20">강의 뒤 운영과 업데이트</a><a href="#section-21">공식 도움말과 자료 구성</a></nav><div class="tools"><a href="index.html">자료 전체 보기</a><a href="install-new-project.sql" download>통합 SQL 내려받기</a><button class="print-button" data-print>인쇄 / PDF로 저장</button></div></aside><main><section class="sheet cover" id="section-0"><div class="page-tag"><span>HANJA CLASSROOM / 설치 워크북</span><span>01</span></div><h1>내 계정으로 한자 게임 설치하기</h1>
+<p>50분 강의 참여자용 상세 매뉴얼</p>
+<p>GitHub · Supabase · Vercel · Render를 처음 사용하는 교사를 위한 안내입니다. 원본 게임 코드를 본인 계정으로 가져오고, 본인의 웹사이트와 실시간 서버를 연결합니다.</p>
+<p><strong>가져오는 것:</strong> 게임 코드, 기본 한자 데이터, 빈 데이터베이스의 구조.</p>
+<p><strong>가져오지 않는 것:</strong> 강사의 학생 닉네임, 점수, 게임 기록, 누적 랭킹, 교사 로그인 정보, 비밀 키, 개인 수업 폴더와 문제풀.</p>
+<p>설치가 끝나면 본인의 교사 계정에서 수업 자료를 만들고 본인 학생들의 기록을 새로 저장합니다. 기존 데이터베이스를 내보내거나 강사 계정에 접속할 필요가 없습니다.</p>
+<p>기준일 2026년 9월 9일 · 기준 코드 a692361 및 문서 2d8ee1e</p>
+<p>서비스 화면의 메뉴 이름은 변경될 수 있습니다. 버튼의 위치보다 이 문서에 적힌 메뉴 이름과 성공 기준을 확인하세요. 강의용 원본 저장소 접근 권한은 강사가 사전에 안내합니다.</p>
+</section><section class="sheet " id="section-1"><div class="page-tag"><span>HANJA CLASSROOM / 설치 워크북</span><span>02</span></div><h2>먼저 전체 흐름 이해하기</h2>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>서비스</th>
+<th>내가 만드는 것</th>
+<th>끝나면 보이는 것</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>00</td>
+<td>공통 준비</td>
+<td>네 서비스의 본인 계정</td>
+<td>네 대시보드에 로그인</td>
+</tr>
+<tr>
+<td>01</td>
+<td>GitHub</td>
+<td>게임 코드의 내 사본</td>
+<td>내아이디/hanja-classroom-workshop</td>
+</tr>
+<tr>
+<td>02</td>
+<td>Supabase</td>
+<td>로그인과 기록을 담을 빈 DB</td>
+<td>표와 보안 규칙 생성 성공</td>
+</tr>
+<tr>
+<td>03</td>
+<td>Vercel</td>
+<td>교사와 학생이 보는 웹</td>
+<td>내 웹 주소와 Ready 표시</td>
+</tr>
+<tr>
+<td>04</td>
+<td>Render</td>
+<td>방과 점수를 처리할 서버</td>
+<td>Live 표시와 /health 응답</td>
+</tr>
+<tr>
+<td>05</td>
+<td>주소 연결</td>
+<td>웹과 서버 및 로그인 연결</td>
+<td>실시간 연결 및 교사 로그인</td>
+</tr>
+<tr>
+<td>06</td>
+<td>사용 확인</td>
+<td>내 수업 자료와 시험 게임</td>
+<td>새로고침 후 자료와 기록 유지</td>
+</tr>
+</tbody></table>
+<p>순서: <strong>00 준비 → 01 코드 → 02 저장소 → 03 웹 → 04 서버 → 05 연결 → 06 확인</strong></p>
+<p>처음 Vercel을 배포할 때는 Render 주소가 아직 없습니다. 임시 주소로 웹을 먼저 만든 뒤, 05단계에서 실제 서버 주소로 바꾸고 다시 배포합니다. 그 전까지 게임이 연결되지 않는 것은 정상입니다.</p>
+<blockquote>
+<p>강의는 모든 가입 절차를 50분 안에 끝내는 과정이 아닙니다. 00–04단계는 사전 준비, 05–06단계는 강의 중 완성과 체험을 권합니다. 사전 준비가 어려웠다면 어느 단계에서 멈췄는지 강사에게 알려주세요.</p>
+</blockquote>
+</section><section class="sheet " id="section-2"><div class="page-tag"><span>HANJA CLASSROOM / 설치 워크북</span><span>03</span></div><h2>00 준비물과 안전한 기록</h2>
+<p>노트북, 인터넷, 이메일을 열 수 있는 휴대폰, 게임 접속용 휴대폰을 준비합니다. 노트북에서 같은 브라우저를 사용하고 각 서비스를 별도 탭으로 열어 두세요.</p>
+<table>
+<thead>
+<tr>
+<th>기록할 값</th>
+<th>용도</th>
+<th>공유 시 주의</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>내 GitHub 아이디</td>
+<td>내 코드 사본 찾기</td>
+<td>비밀값 아님</td>
+</tr>
+<tr>
+<td>내 Fork 저장소 주소</td>
+<td>Vercel과 Render 연결</td>
+<td>비공개 저장소라면 접근 권한 주의</td>
+</tr>
+<tr>
+<td>Supabase Project URL</td>
+<td>웹과 서버가 DB를 찾음</td>
+<td>비밀값 아님</td>
+</tr>
+<tr>
+<td>Supabase Publishable key</td>
+<td>공개 클라이언트 설정</td>
+<td>Secret key와 혼동 금지</td>
+</tr>
+<tr>
+<td>Vercel 웹 주소</td>
+<td>교사와 학생 접속</td>
+<td>내 서비스 주소인지 확인</td>
+</tr>
+<tr>
+<td>Render 서버 주소</td>
+<td>실시간 게임 연결</td>
+<td>웹 주소와 혼동 금지</td>
+</tr>
+</tbody></table>
+<p><strong>비밀값은 위 표나 공용 문서에 적지 않습니다.</strong> DB 비밀번호와 Supabase Secret 또는 service_role 키는 본인의 비밀번호 관리자에만 보관하세요. Secret 키는 Render의 서버 환경 변수 입력 칸에만 붙여 넣습니다.</p>
+<p>하지 않을 일:</p>
+<ul>
+<li>비밀 키를 GitHub 파일이나 강의 채팅에 올리지 않기</li>
+<li>강사의 Supabase 프로젝트, URL, 키를 그대로 사용하지 않기</li>
+<li>화면을 공유할 때 비밀 키 표시를 켜 두지 않기</li>
+<li>문제 해결을 위해 기존 표나 프로젝트를 임의로 삭제하지 않기</li>
+<li>운영 환경에 demo 인증을 켜지 않기</li>
+</ul>
+<p>준비 확인: □ 이메일을 확인할 수 있다 □ 노트북과 휴대폰이 있다 □ 비밀값을 개인적으로 보관할 장소가 있다</p>
+</section><section class="sheet " id="section-3"><div class="page-tag"><span>HANJA CLASSROOM / 설치 워크북</span><span>04</span></div><h2>00 GitHub 가입과 나머지 서비스 로그인</h2>
+<h3>GitHub 계정 만들기</h3>
+<ol>
+<li><a href="https://github.com/signup">GitHub 가입</a>을 엽니다. 주소: <code>github.com/signup</code></li>
+<li>본인 이메일, 비밀번호, 사용할 사용자 이름을 입력합니다.</li>
+<li>사람 확인과 이메일 인증을 본인이 직접 완료합니다.</li>
+<li>로그인 후 오른쪽 위 프로필 메뉴에서 사용자 이름을 확인합니다.</li>
+<li>가능하면 2단계 인증을 설정하고 복구 코드를 개인적으로 보관합니다.</li>
+</ol>
+<h3>Supabase와 Vercel과 Render 가입하기</h3>
+<ol>
+<li><a href="https://supabase.com/dashboard">Supabase</a>를 열고 가입 또는 로그인으로 들어갑니다. 주소: <code>supabase.com/dashboard</code></li>
+<li>GitHub 로그인 선택지가 있으면 방금 만든 GitHub 계정으로 연결합니다.</li>
+<li><a href="https://vercel.com/signup">Vercel 가입</a>, <a href="https://dashboard.render.com/register">Render 가입</a>도 같은 방식으로 진행합니다. 주소: <code>vercel.com/signup</code>, <code>dashboard.render.com/register</code></li>
+<li>GitHub 권한 승인에서 저장소 접근 범위를 읽습니다. 선택할 수 있다면 이번에 사용할 저장소만 허용합니다. Fork가 아직 없다면 01단계 후 접근 권한을 추가합니다.</li>
+<li>약관, 사람 확인, 본인 인증, 결제 관련 선택은 본인이 내용을 확인하고 처리합니다.</li>
+</ol>
+<p>무료 플랜으로 시작하려는 실습입니다. 유료 플랜이나 카드 등록을 요구하는 화면이 나오면 자동으로 다음 버튼을 누르지 말고 강사에게 확인하세요. 계정 심사와 서비스 정책에 따라 가입 절차가 달라질 수 있습니다.</p>
+<p><strong>성공 기준:</strong> GitHub, Supabase, Vercel, Render의 본인 대시보드에 각각 로그인되어 있습니다.</p>
+</section><section class="sheet " id="section-4"><div class="page-tag"><span>HANJA CLASSROOM / 설치 워크북</span><span>05</span></div><h2>01 GitHub에서 내 코드 사본 만들기</h2>
+<p>Fork는 GitHub 안에 만드는 내 사본입니다. ZIP 다운로드나 컴퓨터로 Clone하기는 이 실습에 필요하지 않습니다.</p>
+<ol>
+<li><a href="https://github.com/goodth777/hanja-classroom-workshop">원본 저장소</a>를 엽니다. 주소: <code>github.com/goodth777/hanja-classroom-workshop</code></li>
+<li>오른쪽 위 <strong>Fork</strong>를 누릅니다.</li>
+<li><strong>Owner</strong>에서 본인 계정을 선택합니다.</li>
+<li><strong>Repository name</strong>은 <code>hanja-classroom-workshop</code>으로 둡니다.</li>
+<li><strong>Copy the main branch only</strong>가 보이면 선택합니다.</li>
+<li><strong>Create fork</strong>를 누릅니다.</li>
+<li>브라우저 주소가 아래처럼 본인 아이디로 시작하는지 확인합니다.</li>
+</ol>
+<pre><code class="language-text">https://github.com/내아이디/hanja-classroom-workshop
+</code></pre>
+<ol start="8">
+<li><code>apps</code>, <code>packages</code>, <code>render.yaml</code>, <code>package.json</code>이 있는지 확인합니다.</li>
+</ol>
+<p><strong>성공 기준:</strong> 저장소 상단에 내 아이디가 있고 원본에서 Fork되었다는 안내가 보입니다.</p>
+<blockquote>
+<p>원본이 404로 보이거나 Fork가 불가능하면 여기서 멈추세요. 강사의 비공개 저장소 접근 권한과 Fork 허용 여부를 확인해야 합니다. 강사의 계정 비밀번호를 받아 로그인하는 방식으로 해결하지 않습니다.</p>
+</blockquote>
+<p><strong>중요:</strong> 이후 Vercel과 Render가 연결해야 하는 저장소는 <code>goodth777/...</code>가 아니라 <code>내아이디/hanja-classroom-workshop</code>입니다. 강사의 업데이트를 무조건 바로 배포하지 않고 본인 Fork에서 받아 적용하기 위한 구분입니다.</p>
+</section><section class="sheet " id="section-5"><div class="page-tag"><span>HANJA CLASSROOM / 설치 워크북</span><span>06</span></div><h2>02 Supabase 프로젝트와 키 준비하기</h2>
+<h3>빈 프로젝트 생성</h3>
+<ol>
+<li>Supabase 대시보드에서 <strong>New project</strong>를 누릅니다.</li>
+<li>조직이 없으면 본인의 조직을 만듭니다. 무료 실습의 요금제 선택을 확인합니다.</li>
+<li>프로젝트 이름은 <code>hanja-stroke-battle</code>로 입력합니다.</li>
+<li><strong>Database password</strong>에는 새롭고 강한 비밀번호를 정해 개인적으로 보관합니다.</li>
+<li>지역은 선택 가능한 가까운 아시아 지역을 고릅니다.</li>
+<li><strong>Create new project</strong>를 누르고 준비가 끝날 때까지 기다립니다.</li>
+</ol>
+<h3>주소와 키 구분</h3>
+<ol>
+<li><strong>Project Settings</strong>에서 <strong>Data API</strong> 또는 <strong>API Keys</strong>를 찾습니다. 대시보드에 <strong>Connect</strong> 안내가 있으면 거기서 Project URL을 확인할 수도 있습니다.</li>
+<li><strong>Project URL</strong>을 기록합니다. 보통 <code>https://프로젝트식별자.supabase.co</code> 형태입니다.</li>
+<li><strong>Publishable key</strong>를 확인합니다. 새 키는 보통 <code>sb_publishable_</code>로 시작합니다.</li>
+<li><strong>Secret key</strong>를 확인합니다. 새 키는 보통 <code>sb_secret_</code>로 시작합니다. 이 값은 Render에만 입력합니다.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Supabase에서 보이는 이름</th>
+<th>나중에 넣을 곳</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Project URL</td>
+<td>Vercel과 Render 모두</td>
+</tr>
+<tr>
+<td>Publishable key 또는 예전 anon key</td>
+<td>Vercel과 Render 모두</td>
+</tr>
+<tr>
+<td>Secret key 또는 예전 service_role key</td>
+<td>Render 서버만</td>
+</tr>
+<tr>
+<td>Database password</td>
+<td>개인 보관 이 실습의 환경 변수에 넣지 않음</td>
+</tr>
+</tbody></table>
+<p>현재 앱은 Render 변수 이름 <code>SUPABASE_SERVICE_ROLE_KEY</code>에 새 Secret key 또는 기존 service_role key를 사용하는 구조입니다. <strong>변수 이름은 바꾸지 말고 값만 본인 키로 넣습니다.</strong></p>
+<p><strong>성공 기준:</strong> 새 빈 프로젝트가 준비되었고, 공개 키와 비밀 키의 차이를 구분할 수 있습니다.</p>
+</section><section class="sheet " id="section-6"><div class="page-tag"><span>HANJA CLASSROOM / 설치 워크북</span><span>07</span></div><h2>02 데이터베이스 구조 설치하기</h2>
+<p>강사가 제공한 <strong>install-new-project.sql</strong>은 기존 초기 설정과 최근 기록·랭킹 설정을 순서대로 묶은 파일입니다. 학생 기록을 담은 데이터 덤프가 아닙니다.</p>
+<ol>
+<li>반드시 방금 만든 <strong>본인 새 Supabase 프로젝트</strong>를 엽니다.</li>
+<li><strong>SQL Editor → New query</strong>로 이동합니다.</li>
+<li>자료 폴더의 <code>install-new-project.sql</code>을 열어 전체를 복사합니다. 웹 매뉴얼의 ‘통합 SQL 보기’에서도 복사할 수 있습니다.</li>
+<li>SQL 편집기에 붙여 넣습니다. <code>begin;</code>부터 마지막 점검 쿼리까지 모두 들어갔는지 확인합니다.</li>
+<li>대상이 새 프로젝트인지 다시 확인하고 <strong>Run</strong>을 누릅니다.</li>
+<li>결과의 아래 세 항목이 모두 <code>true</code>인지 확인합니다.</li>
+</ol>
+<pre><code class="language-text">tables_ready       true
+ranking_ready      true
+sequence_ready     true
+</code></pre>
+<ol start="7">
+<li><strong>Table Editor</strong>에서 <code>game_results</code>, <code>teacher_character_preferences</code> 표를 확인합니다.</li>
+</ol>
+<p>표가 비어 있어도 정상입니다. 교사가 자료를 저장하고 게임을 마치면 그때 본인 데이터가 생깁니다. 퀴즈 문제풀과 수업 폴더는 교사 설정 데이터에 저장되므로, 별도의 ‘폴더 표’가 없어도 됩니다.</p>
+<p><strong>성공 기준:</strong> SQL 실행 성공과 세 가지 <code>true</code>를 확인했습니다.</p>
+<blockquote>
+<p>오류가 나면 끝부분만 다시 실행하거나 표를 삭제하지 마세요. 현재 프로젝트 이름, 실패한 SQL 줄, 오류 문구를 확인하되 키와 비밀번호는 캡처에서 제외합니다. 기존 앱을 업그레이드하는 프로젝트에는 이 신규 설치 절차를 적용하지 말고 별도 마이그레이션 안내를 따릅니다.</p>
+</blockquote>
+<details class="sql-appendix"><summary>통합 SQL 보기와 복사</summary><p>새 프로젝트에만 사용하세요. 전체 내용을 한 번에 복사합니다.</p><pre><code>-- HANJA WORKSHOP / NEW EMPTY SUPABASE PROJECT ONLY
+-- Schema and permissions only. No teacher or student records.
+-- Generated from repository schema files; reviewed 2026-09-09.
+
+begin;
+
+-- SOURCE: apps/server/supabase.sql
+create table if not exists public.game_results (
+  id bigint generated by default as identity primary key,
+  character text not null,
+  player_count integer not null check (player_count between 1 and 30),
+  scores jsonb not null,
+  completed_at timestamptz not null,
+  created_at timestamptz not null default now()
+);
+
+-- Legacy rows are anonymous. Apply migrations/20260908_game_history.sql after this
+-- bootstrap for teacher-private nickname scoreboards and average rankings.
+alter table public.game_results enable row level security;
+
+create table if not exists public.teacher_character_preferences (
+  teacher_id uuid primary key references auth.users(id) on delete cascade,
+  ordered_chars text[] not null default array[
+    '木','水','人','十','一','二','三','四','五','六',
+    '七','八','九','日','月','山','火','口','大','小'
+  ]::text[],
+  approved_characters jsonb not null default '{}'::jsonb,
+  updated_at timestamptz not null default now()
+);
+
+-- Existing single lists migrate lazily to a per-teacher default folder on read.
+alter table public.teacher_character_preferences
+  add column if not exists folders jsonb;
+
+alter table public.teacher_character_preferences
+  add column if not exists active_folder_id text;
+alter table public.teacher_character_preferences enable row level security;
+
+drop policy if exists &quot;Teachers can read own character preferences&quot;
+  on public.teacher_character_preferences;
+create policy &quot;Teachers can read own character preferences&quot;
+  on public.teacher_character_preferences
+  for select
+  using (auth.uid() = teacher_id);
+
+drop policy if exists &quot;Teachers can insert own character preferences&quot;
+  on public.teacher_character_preferences;
+create policy &quot;Teachers can insert own character preferences&quot;
+  on public.teacher_character_preferences
+  for insert
+  with check (auth.uid() = teacher_id);
+
+drop policy if exists &quot;Teachers can update own character preferences&quot;
+  on public.teacher_character_preferences;
+create policy &quot;Teachers can update own character preferences&quot;
+  on public.teacher_character_preferences
+  for update
+  using (auth.uid() = teacher_id)
+  with check (auth.uid() = teacher_id);
+
+-- SOURCE: apps/server/migrations/20260908_game_history.sql
+-- Existing anonymous records remain untouched and cannot be assigned to a teacher.
+alter table public.game_results add column if not exists result_key uuid;
+alter table public.game_results add column if not exists teacher_id uuid references auth.users(id) on delete cascade;
+alter table public.game_results add column if not exists game_mode text;
+alter table public.game_results add column if not exists status text not null default 'completed';
+create unique index if not exists game_results_result_key on public.game_results(result_key);
+create index if not exists game_results_teacher_mode_date on public.game_results(teacher_id, game_mode, completed_at desc);
+alter table public.game_results enable row level security;
+revoke all on public.game_results from anon, authenticated;
+grant select on public.game_results to authenticated;
+grant all on public.game_results to service_role;
+drop policy if exists teacher_read_own_results on public.game_results;
+create policy teacher_read_own_results on public.game_results for select to authenticated using ((select auth.uid()) = teacher_id);
+
+create or replace function public.teacher_result_leaderboard(p_teacher_id uuid, p_game_mode text)
+returns table(nickname text, average numeric, games bigint, rank bigint)
+language sql stable security invoker set search_path = '' as $$
+  with averages as (
+    select s-&gt;&gt;'nickname' as nickname, round(avg((s-&gt;&gt;'score')::numeric), 2) as average, count(*) as games
+    from public.game_results r cross join lateral jsonb_array_elements(r.scores) s
+    where r.teacher_id = p_teacher_id and r.game_mode = p_game_mode and r.status = 'completed'
+      and s-&gt;&gt;'nickname' is not null
+    group by s-&gt;&gt;'nickname'
+  )
+  select nickname, average, games, dense_rank() over(order by average desc) as rank
+  from averages order by average desc, nickname;
+$$;
+revoke all on function public.teacher_result_leaderboard(uuid, text) from public, anon, authenticated;
+grant execute on function public.teacher_result_leaderboard(uuid, text) to service_role;
+
+-- SOURCE: apps/server/migrations/20260908_game_history_sequence.sql
+-- Identity inserts require sequence privileges separately from table privileges.
+grant usage, select on sequence public.game_results_id_seq to service_role;
+notify pgrst, 'reload schema';
+
+commit;
+
+-- All three values should be true.
+select
+  to_regclass('public.game_results') is not null
+    and to_regclass('public.teacher_character_preferences') is not null as tables_ready,
+  to_regprocedure('public.teacher_result_leaderboard(uuid,text)') is not null as ranking_ready,
+  has_sequence_privilege('service_role', 'public.game_results_id_seq', 'USAGE') as sequence_ready;
+</code></pre></details>
+</section><section class="sheet " id="section-7"><div class="page-tag"><span>HANJA CLASSROOM / 설치 워크북</span><span>08</span></div><h2>03 Vercel에 웹 먼저 배포하기</h2>
+<h3>본인 Fork 가져오기</h3>
+<ol>
+<li>Vercel 대시보드에서 <strong>Add New → Project</strong>를 누릅니다.</li>
+<li>GitHub 목록에서 <strong>본인 아이디의 hanja-classroom-workshop</strong>을 찾습니다.</li>
+<li>안 보이면 <strong>Adjust GitHub App Permissions</strong> 등 저장소 접근 설정에서 본인 Fork를 허용합니다.</li>
+<li>해당 저장소의 <strong>Import</strong>를 누릅니다.</li>
+<li>프로젝트 이름은 예를 들어 <code>hanja-내아이디</code>로 지정합니다. 실제 할당된 주소는 배포 후 확인합니다.</li>
+</ol>
+<h3>명령어를 입력하기 전에: 자동 설정 파일 확인</h3>
+<p><strong>강사가 새 설정을 GitHub에 반영한 뒤 사용하는 간편 경로입니다. 현재 배포된 저장소에 이미 반영되었다는 뜻은 아닙니다.</strong></p>
+<ol>
+<li>GitHub의 <strong>본인 Fork 첫 화면</strong>으로 돌아갑니다. <code>apps</code>, <code>packages</code>가 보이는 파일 목록입니다.</li>
+<li><strong>apps → web</strong> 폴더를 열어 <strong>vercel.json</strong>을 찾습니다. 이 파일은 저장소 맨 위가 아니라 웹 폴더에 있습니다.</li>
+<li>파일이 있으면 Vercel의 Import 화면으로 돌아갑니다.</li>
+<li><strong>Root Directory → Edit</strong>에서 <strong>apps → web</strong>을 선택해 <code>apps/web</code>으로 지정합니다. <strong>Include files outside the root directory in the Build Step</strong> 옵션이 보이면 켭니다.</li>
+<li>Framework는 <strong>Next.js</strong>인지 확인합니다.</li>
+<li><strong>Install Command / Build Command / Output Directory를 직접 쓰지 않습니다.</strong> 저장소의 <code>vercel.json</code>이 제공합니다. 다음 ‘Vercel 공개 설정과 첫 배포’로 이동합니다.</li>
+</ol>
+<p><strong>파일이 없으면:</strong> 초보자가 설정 파일을 직접 작성하지 않습니다. 강사에게 ‘제 Fork에 vercel.json이 없습니다’라고 알려 주세요. 강사가 원본에 반영한 뒤, 수정하지 않은 본인 Fork에서 <strong>Sync fork → Update branch</strong>로 가져올 수 있습니다. 충돌이나 덮어쓰기 경고가 나오면 중단하고 강사에게 확인합니다.</p>
+<p>이미 만들어진 Vercel 프로젝트의 Root Directory는 이 파일로 바뀌지 않습니다. 기존 프로젝트를 변경하려는 경우 강사와 설정을 확인하세요.</p>
+<p>출처: <a href="https://vercel.com/docs/project-configuration/vercel-json">Vercel 저장소 설정 파일</a></p>
+<details><summary>강사용 예비 경로: 자동 설정 파일이 없는 저장소의 수동 설정</summary>
+
+<h3>빌드 설정</h3>
+<p>이 저장소는 웹과 공유 패키지가 함께 있습니다. 아래 표는 이 매뉴얼에서 사용하는 한 가지 설정입니다. 서로 다른 방식의 설정을 섞지 마세요.</p>
+<table>
+<thead>
+<tr>
+<th>Vercel 항목</th>
+<th>값</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Framework Preset</td>
+<td>Next.js</td>
+</tr>
+<tr>
+<td>Root Directory</td>
+<td>apps/web</td>
+</tr>
+<tr>
+<td>Install Command</td>
+<td>아래 첫 번째 명령</td>
+</tr>
+<tr>
+<td>Build Command</td>
+<td>아래 두 번째 명령</td>
+</tr>
+<tr>
+<td>Output Directory</td>
+<td>.next 또는 Next.js 기본값</td>
+</tr>
+</tbody></table>
+<p>Install Command:</p>
+<pre><code class="language-text">npm install --prefix=../.. --include=dev
+</code></pre>
+<p>Build Command:</p>
+<pre><code class="language-text">cd ../.. &amp;&amp; npm run build:packages &amp;&amp; npm run build -w @hanja/web
+</code></pre>
+<p>각 명령의 <strong>Override</strong> 또는 편집 스위치가 있으면 켜고 입력합니다. 이는 Vercel에 입력할 값이며 본인 컴퓨터의 터미널에서 실행하는 명령이 아닙니다.</p>
+</details>
+</section><section class="sheet " id="section-8"><div class="page-tag"><span>HANJA CLASSROOM / 설치 워크북</span><span>09</span></div><h2>03 Vercel 공개 설정과 첫 배포</h2>
+<p><strong>Environment Variables</strong>에 세 항목을 추가합니다. 강사의 값이 아닌 02단계에서 만든 본인 값을 사용합니다.</p>
+<h3>첫 번째 줄부터 하나씩 입력하기</h3>
+<p>여기서 <strong>Name / Key</strong>는 ‘설정의 이름’, <strong>Value</strong>는 ‘내 계정의 실제 값’입니다. 표 한 줄이 화면의 한 줄입니다. 세 이름을 한 칸에 한꺼번에 붙여 넣지 않습니다.</p>
+<ol>
+<li>아직 <strong>Deploy</strong>를 누르지 말고 Import 설정 화면의 <strong>Environment Variables</strong>를 클릭해 펼칩니다.</li>
+<li>첫 줄 <strong>Name / Key</strong> 칸을 클릭하고 <code>NEXT_PUBLIC_SUPABASE_URL</code>을 붙여 넣습니다.</li>
+<li>Supabase 탭으로 이동해서 본인 프로젝트의 <strong>Project URL</strong>을 복사합니다.</li>
+<li>Vercel 탭으로 돌아와 같은 줄 <strong>Value</strong> 칸에 붙여 넣습니다.</li>
+<li><strong>Add</strong> 또는 새 행 추가 버튼으로 다음 줄을 만듭니다. 이미 빈 줄이 보이면 그 줄을 사용합니다.</li>
+<li>둘째 줄 이름은 <code>NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY</code>, 값은 Supabase의 <strong>Publishable key</strong>입니다. <strong>Secret key가 아닙니다.</strong></li>
+<li>셋째 줄 이름은 <code>NEXT_PUBLIC_SERVER_URL</code>, 값은 지금만 <code>https://temporary.invalid</code>입니다.</li>
+<li>총 세 줄인지 확인하고 아래 표와 이름을 대조합니다. 이후에 Deploy를 누릅니다.</li>
+</ol>
+<p>복사는 Windows에서 <strong>Ctrl+C</strong>, 붙여 넣기는 <strong>Ctrl+V</strong>입니다. 매뉴얼의 코드 상자 오른쪽 ‘복사’ 버튼도 사용할 수 있습니다. 값은 직접 타이핑하기보다 원래 서비스 화면에서 복사하세요.</p>
+</section><section class="sheet " id="section-9"><div class="page-tag"><span>HANJA CLASSROOM / 설치 워크북</span><span>10</span></div><h2>03 입력값 대조와 Deploy 버튼 누르기</h2>
+<p>앞 단계에서 넣은 세 줄을 다음 표와 비교하세요.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NEXT_PUBLIC_SUPABASE_URL</td>
+<td>본인 Supabase Project URL</td>
+</tr>
+<tr>
+<td>NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY</td>
+<td>본인 Publishable 또는 anon key</td>
+</tr>
+<tr>
+<td>NEXT_PUBLIC_SERVER_URL</td>
+<td><a href="https://temporary.invalid">https://temporary.invalid</a></td>
+</tr>
+</tbody></table>
+<pre><code class="language-text">NEXT_PUBLIC_SUPABASE_URL
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
+NEXT_PUBLIC_SERVER_URL
+</code></pre>
+<ol>
+<li>항목 이름과 값을 각각 정확한 칸에 넣습니다. 값에 따옴표나 공백을 추가하지 않습니다.</li>
+<li>대상 환경에 <strong>Production</strong>이 포함되어 있는지 확인합니다.</li>
+<li><strong>Deploy</strong>를 누릅니다.</li>
+<li>완료 화면 또는 대시보드에서 <strong>Ready</strong>를 확인합니다.</li>
+<li><strong>Domains</strong>에서 지속적으로 사용할 프로덕션 웹 주소를 기록합니다. 매번 달라지는 개별 Preview 주소와 구분합니다.</li>
+</ol>
+<p>예시 주소의 <code>내프로젝트</code>를 그대로 입력하지 마세요. <strong>실제로 할당된 본인 주소</strong>를 복사해야 합니다.</p>
+<pre><code class="language-text">https://내프로젝트.vercel.app
+</code></pre>
+<p><strong>성공 기준:</strong> Vercel 배포가 Ready이고 본인 웹 주소에서 교사 로그인 화면이 열립니다. 아직 게임 서버 연결은 완료되지 않았습니다.</p>
+<blockquote>
+<p><code>https://temporary.invalid</code>는 연결을 위한 실제 서버가 아닙니다. 웹 주소를 먼저 확보하기 위한 임시값이며 반드시 05단계에서 교체합니다. Secret/service_role 키와 <code>NEXT_PUBLIC_TEACHER_AUTH_MODE=demo</code>는 Vercel에 넣지 않습니다.</p>
+</blockquote>
+</section><section class="sheet " id="section-10"><div class="page-tag"><span>HANJA CLASSROOM / 설치 워크북</span><span>11</span></div><h2>04 Render에 실시간 서버 만들기</h2>
+<ol>
+<li>Render 대시보드에서 <strong>New → Blueprint</strong>를 누릅니다.</li>
+<li><strong>본인 Fork 저장소</strong>를 선택합니다. 원본 <code>goodth777</code> 저장소를 선택하지 않습니다.</li>
+<li>저장소 접근 권한 요청이 나오면 본인 Fork에 대한 권한인지 확인합니다.</li>
+<li>브랜치는 <strong>main</strong>, Blueprint 경로는 기본 <strong>render.yaml</strong>을 사용합니다.</li>
+<li>서비스 계획에 <strong>Free</strong>, 서버 서비스가 한 개 표시되는지 확인합니다.</li>
+</ol>
+<p><code>render.yaml</code>이 서버 이름, 빌드 명령, 시작 명령, <code>/health</code> 점검 경로를 제공합니다. 환경 변수는 아래 네 값을 본인이 입력해야 합니다. 처음 Blueprint를 만드는 화면에서 입력을 요구하면 그 자리에서 입력합니다.</p>
+<p><strong>Blueprint는 ‘미리 작성된 설치 설계도’입니다.</strong> Web Service를 수동으로 만드는 화면에서 Build Command와 Start Command를 다시 작성하는 경로가 아닙니다. 명령어를 직접 입력하라는 화면이라면 지금 선택한 메뉴가 <strong>New → Blueprint</strong>인지 먼저 확인하세요.</p>
+<p>네 개의 이름이 미리 표시되면 <strong>값 칸만</strong> 채웁니다. <code>WEB_ORIGIN</code>에는 Vercel 웹 주소, <code>SUPABASE_URL</code>에는 Supabase 주소, <code>SUPABASE_PUBLISHABLE_KEY</code>에는 공개 키, <code>SUPABASE_SERVICE_ROLE_KEY</code>에는 비밀 키를 각각 붙여 넣습니다. <code>sync: false</code>를 입력하는 것이 아닙니다.</p>
+<p>출처: <a href="https://render.com/docs/blueprint-spec">Render Blueprint와 사용자 입력값</a></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>WEB_ORIGIN</td>
+<td>03단계의 본인 Vercel 프로덕션 주소</td>
+</tr>
+<tr>
+<td>SUPABASE_URL</td>
+<td>본인 Supabase Project URL</td>
+</tr>
+<tr>
+<td>SUPABASE_PUBLISHABLE_KEY</td>
+<td>본인 Publishable 또는 anon key</td>
+</tr>
+<tr>
+<td>SUPABASE_SERVICE_ROLE_KEY</td>
+<td>본인 Secret 또는 service_role key 서버 전용</td>
+</tr>
+</tbody></table>
+<pre><code class="language-text">WEB_ORIGIN
+SUPABASE_URL
+SUPABASE_PUBLISHABLE_KEY
+SUPABASE_SERVICE_ROLE_KEY
+</code></pre>
+<ol start="6">
+<li>값을 확인한 뒤 <strong>Apply / Deploy Blueprint</strong>로 생성합니다.</li>
+<li>빠진 값이 있으면 서비스 <strong>Environment</strong>에서 추가하고 저장 후 다시 배포합니다.</li>
+<li>서비스 상태가 <strong>Live</strong>가 될 때까지 기다립니다.</li>
+</ol>
+<p><strong>성공 기준:</strong> 본인 Fork를 사용하는 서버가 Live이고 네 환경 변수가 준비되었습니다. 비밀 키는 이 서버에만 있습니다.</p>
+</section><section class="sheet " id="section-11"><div class="page-tag"><span>HANJA CLASSROOM / 설치 워크북</span><span>12</span></div><h2>04 서버 주소와 정상 응답 확인하기</h2>
+<ol>
+<li>Render 서비스 상단의 <code>https://...onrender.com</code> 주소를 복사합니다.</li>
+<li>해당 주소 뒤에 <code>/health</code>를 붙여 새 탭에서 엽니다.</li>
+</ol>
+<pre><code class="language-text">https://내서버.onrender.com/health
+</code></pre>
+<ol start="3">
+<li>아래 항목이 포함된 JSON 문장이 보이는지 확인합니다.</li>
+</ol>
+<pre><code class="language-json">{
+  &quot;ok&quot;: true,
+  &quot;service&quot;: &quot;hanja-realtime-server&quot;,
+  &quot;resultHistory&quot;: true
+}
+</code></pre>
+<p>실제 응답에는 다른 항목도 함께 나옵니다. 그것이 정상입니다. 주소의 첫 화면에서 <code>Cannot GET /</code>가 나오더라도 <code>/health</code>는 정상일 수 있습니다.</p>
+<p><strong>주의:</strong> <code>/health</code>의 성공은 서버 프로세스가 응답한다는 뜻입니다. DB 저장, 로그인, 학생 게임까지 모두 통과했다는 뜻은 아닙니다. 06단계에서 실제 저장과 게임을 시험해야 합니다.</p>
+<p>무료 Render는 유휴 후 첫 접속에서 기동 대기가 생길 수 있습니다. 바로 실패로 판단하지 말고 Live 상태와 Logs를 확인하고 잠시 후 다시 요청하세요. 서버를 계속 깨우는 자동 요청을 설치하는 방식으로 해결하지 않습니다.</p>
+<p>기록할 서버 주소는 <code>/health</code>를 뺀 기본 주소입니다.</p>
+<pre><code class="language-text">https://내서버.onrender.com
+</code></pre>
+</section><section class="sheet " id="section-12"><div class="page-tag"><span>HANJA CLASSROOM / 설치 워크북</span><span>13</span></div><h2>05 웹과 서버 주소 연결하기</h2>
+<h3>Vercel의 임시 주소 교체</h3>
+<ol>
+<li>Vercel의 본인 프로젝트에서 <strong>Settings → Environment Variables</strong>를 엽니다.</li>
+<li><strong>NEXT_PUBLIC_SERVER_URL</strong>을 찾아 편집합니다.</li>
+<li><code>https://temporary.invalid</code>를 지우고 본인 Render 기본 주소를 넣습니다.</li>
+<li><code>/health</code>, <code>/socket.io</code>, 따옴표, 끝의 <code>/</code>를 덧붙이지 않습니다.</li>
+<li>Production 환경의 값인지 확인하고 저장합니다.</li>
+<li><strong>Deployments → 최신 배포 → 점 세 개 → Redeploy</strong>를 실행합니다.</li>
+<li>새 배포가 Ready가 된 뒤 웹을 새로고침합니다.</li>
+</ol>
+<h3>Render의 웹 주소 확인</h3>
+<ol>
+<li>Render 서비스의 <strong>Environment</strong>를 엽니다.</li>
+<li><strong>WEB_ORIGIN</strong>이 본인 Vercel의 프로덕션 기본 주소와 정확히 같은지 확인합니다.</li>
+<li>주소를 고쳤다면 저장하고 변경값이 적용되도록 배포를 완료합니다.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>방향</th>
+<th>넣을 값</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Vercel에서 Render 찾기</td>
+<td>NEXT_PUBLIC_SERVER_URL = Render 주소</td>
+</tr>
+<tr>
+<td>Render가 웹 허용하기</td>
+<td>WEB_ORIGIN = Vercel 주소</td>
+</tr>
+</tbody></table>
+<p><strong>성공 기준:</strong> 두 값에 임시 주소나 강사의 주소가 없고, 변경 후 배포가 완료되었습니다. 교사 로그인 후 <code>실시간 연결됨</code>을 확인합니다.</p>
+<blockquote>
+<p>환경 변수 저장만 하고 웹을 다시 배포하지 않으면 기존 빌드에 임시 주소가 남을 수 있습니다. 재배포 후 다시 확인하세요.</p>
+</blockquote>
+</section><section class="sheet " id="section-13"><div class="page-tag"><span>HANJA CLASSROOM / 설치 워크북</span><span>14</span></div><h2>05 Supabase 로그인 주소 설정하기</h2>
+<ol>
+<li>Supabase 본인 프로젝트의 <strong>Authentication → URL Configuration</strong>을 엽니다.</li>
+<li><strong>Site URL</strong>을 본인 Vercel 프로덕션 기본 주소로 바꿉니다.</li>
+<li><strong>Redirect URLs</strong>에도 동일한 주소를 추가합니다.</li>
+<li><strong>Save</strong>로 저장합니다.</li>
+<li>Authentication의 로그인 제공자 설정에서 <strong>Email</strong>이 켜져 있는지 확인합니다. 메뉴는 <strong>Providers / Sign In / Sign Up</strong>처럼 표시될 수 있습니다.</li>
+</ol>
+<pre><code class="language-text">Site URL: https://내프로젝트.vercel.app
+Redirect URLs: https://내프로젝트.vercel.app
+</code></pre>
+<p>위 문자열의 <code>내프로젝트</code>는 예시입니다. 실제 주소를 넣습니다. 모든 사이트를 허용하는 <code>*</code>나 강사 사이트 주소를 넣어 해결하지 않습니다.</p>
+<h3>실습용 이메일을 확인하세요</h3>
+<p>Supabase 기본 메일 서비스는 프로젝트 조직 팀에 등록된 이메일로만 발송하며, 2026년 9월 9일 확인 기준 프로젝트당 시간당 2통으로 제한됩니다. 메일 전달도 보장하지 않습니다. 본인 조직의 계정 이메일을 확인하고 로그인 시험을 반복하지 마세요.</p>
+<p>지속 운영하거나 팀에 없는 이메일로 교사가 로그인해야 한다면 별도 SMTP 설정이 필요합니다. 학생은 이메일 로그인을 하지 않습니다. SMTP 준비가 되지 않은 상태를 해결하려고 demo 인증이나 보안 해제를 사용하지 않습니다.</p>
+<p>출처: <a href="https://supabase.com/docs/guides/auth/auth-smtp">Supabase 메일 설정</a>, <a href="https://supabase.com/docs/guides/auth/redirect-urls">로그인 반환 주소</a></p>
+</section><section class="sheet " id="section-14"><div class="page-tag"><span>HANJA CLASSROOM / 설치 워크북</span><span>15</span></div><h2>06 첫 교사 로그인과 저장 확인</h2>
+<h3>로그인</h3>
+<ol>
+<li>노트북의 같은 브라우저에서 본인 Vercel 주소를 엽니다.</li>
+<li>본인 Supabase 조직에 등록된 이메일을 입력합니다.</li>
+<li><strong>이메일로 로그인 링크 받기</strong>를 한 번 누릅니다.</li>
+<li>받은편지함과 스팸함을 확인합니다.</li>
+<li>링크를 요청한 브라우저에서 메일 링크를 엽니다. 다른 기기의 메일 앱에서 열었다면 원래 브라우저에서 다시 열어야 할 수 있습니다.</li>
+<li>게임 선택 화면과 교사 계정, <strong>실시간 연결됨</strong> 상태를 확인합니다.</li>
+</ol>
+<h3>수업 자료 저장</h3>
+<ol>
+<li>상단 <strong>수업 자료 → 한자 폴더 관리</strong>로 이동합니다.</li>
+<li>시험 폴더 <code>배포확인</code>을 만듭니다.</li>
+<li>한자 추가 검색에서 <code>목</code> 또는 <code>木</code>을 찾고 해당 폴더에 추가합니다.</li>
+<li>필요한 경우 획순을 확인하고 승인 절차를 완료합니다.</li>
+<li>페이지를 새로고침합니다.</li>
+<li>방금 만든 폴더와 한자가 남아 있는지 확인합니다.</li>
+</ol>
+<p><strong>성공 기준:</strong> 교사 로그인과 서버 연결이 완료되었고, 새로고침 후에도 본인이 만든 수업 자료가 유지됩니다.</p>
+<blockquote>
+<p>로그인 메일 제한 때문에 실습 중 로그아웃과 재로그인을 반복할 필요는 없습니다. 이 단계의 필수 확인은 새로고침 후 저장 유지입니다. 계속 운영할 때 사용할 로그인 방식도 별도로 점검하세요.</p>
+</blockquote>
+</section><section class="sheet " id="section-15"><div class="page-tag"><span>HANJA CLASSROOM / 설치 워크북</span><span>16</span></div><h2>06 휴대폰으로 획배틀 시험하기</h2>
+<ol>
+<li>교사 PC 상단 <strong>게임</strong>에서 <strong>획 배틀</strong>을 선택합니다.</li>
+<li>본인 폴더에서 <code>一</code> 또는 <code>木</code>처럼 짧은 한자를 선택합니다.</li>
+<li>한 획 제한 시간을 확인하고 <strong>게임 열기</strong>를 누릅니다.</li>
+<li>QR 코드와 6자리 방 코드가 나타나는지 확인합니다.</li>
+<li>휴대폰으로 QR을 찍고 <code>테스트1</code> 같은 시험 닉네임으로 입장합니다. 학생 계정 가입은 필요하지 않습니다.</li>
+<li>학생은 대기 화면에서 <strong>진동·소리 확인</strong>을 눌러 봅니다. 미지원 안내가 나올 수 있습니다.</li>
+<li>교사는 참가 인원을 확인하고 배틀을 시작합니다.</li>
+<li>영상과 Ready → 3 → 2 → 1 뒤에 게임이 시작되는지 봅니다.</li>
+<li>학생이 한 획씩 입력합니다. 여러 명이면 본인 차례에만 입력됩니다.</li>
+<li>마지막 획을 마치면 교사와 학생 양쪽에 결과가 보이는지 확인합니다.</li>
+</ol>
+<p><strong>성공 기준:</strong> QR 입장, 차례, 정답 반영, 마지막 결과까지 양쪽 화면에서 진행됩니다.</p>
+<p>50분 강의에서는 2인 1조로 번갈아 교사와 학생 역할을 합니다. 한 분의 서비스를 먼저 확인한 뒤 다른 분의 서비스에서도 반복합니다.</p>
+<p>실습용 닉네임으로 생성된 기록은 본인 DB에 새로 저장됩니다. 강사의 실제 학생 기록을 복사한 것이 아닙니다.</p>
+</section><section class="sheet " id="section-16"><div class="page-tag"><span>HANJA CLASSROOM / 설치 워크북</span><span>17</span></div><h2>06 스피드 퀴즈와 한자 지렁이 확인</h2>
+<h3>뜻음 스피드 퀴즈</h3>
+<ol>
+<li>수업 폴더에 최소 4개의 한자를 준비합니다. 예: <code>木 水 人 十</code>.</li>
+<li><strong>수업 자료 → 퀴즈 문제풀</strong>에서 새 문제풀을 만듭니다.</li>
+<li>수업 폴더의 한자를 가져오고, 뜻과 음을 확인해 저장합니다.</li>
+<li><strong>게임 → 뜻·음 스피드 퀴즈</strong>에서 문제풀과 출제 수를 선택해 방을 엽니다.</li>
+<li>학생이 입장하면 시작합니다. 각 학생은 자기 속도로 문제를 풉니다.</li>
+<li>타이머, 내 점수, 정답 후 다음 문제 이동, 교사 오른쪽 순위 변화를 확인합니다.</li>
+<li>주관식이 출제되면 키보드와 입력란이 가려지지 않는지도 본인 휴대폰에서 확인합니다.</li>
+</ol>
+<h3>한자 지렁이</h3>
+<ol>
+<li><strong>게임 → 한자 지렁이</strong>에서 <code>木</code> 한 자를 선택합니다.</li>
+<li>방을 열어 학생이 입장한 후 시작합니다.</li>
+<li>학생은 자기 화면에서 시작점과 끝점을 연결합니다.</li>
+<li>교사 화면에 개인별 진행 카드와 점수가 나타나는지 확인합니다.</li>
+<li>종료 또는 중단 시 학생 화면이 다음 입장을 할 수 있는 상태인지 확인합니다.</li>
+</ol>
+<p><strong>중단 시험:</strong> 교사가 게임을 중단하면 학생이 새 방 코드를 입력할 수 있어야 합니다. 새 방에서는 이전 닉네임으로 재입장되는지 확인하세요.</p>
+<p>실기기 진동·키보드 동작은 휴대폰과 브라우저의 정책에 따라 다릅니다. PC에서 화면을 줄인 시험만으로 실제 휴대폰 동작을 확인했다고 간주하지 않습니다.</p>
+</section><section class="sheet " id="section-17"><div class="page-tag"><span>HANJA CLASSROOM / 설치 워크북</span><span>18</span></div><h2>06 기록과 최종 완료 점검</h2>
+<ol>
+<li>시험 게임 하나를 끝까지 완료합니다.</li>
+<li>교사 상단의 <strong>기록·랭킹</strong>을 엽니다.</li>
+<li>방금 한 게임이 <strong>지난 게임</strong>에 나타나는지 확인합니다.</li>
+<li>해당 게임 종류의 <strong>평균 점수 랭킹</strong>을 확인합니다.</li>
+<li>페이지를 새로고침한 뒤에도 기록이 남아 있는지 확인합니다.</li>
+</ol>
+<p>같은 교사 계정 안에서 같은 닉네임을 기준으로 집계합니다. 게임 종류별로 평균을 구분하며, 중단 기록은 완료 게임 평균에서 제외됩니다. 시험을 중단하기만 했다면 평균 랭킹이 비어 있을 수 있습니다.</p>
+<ul>
+<li><input disabled="" type="checkbox"> 내아이디의 Fork를 Vercel과 Render가 사용한다.</li>
+<li><input disabled="" type="checkbox"> 통합 SQL 점검 결과 세 항목이 true다.</li>
+<li><input disabled="" type="checkbox"> Render /health에서 ok가 true다.</li>
+<li><input disabled="" type="checkbox"> Vercel 임시 서버 주소를 실제 주소로 바꾸고 재배포했다.</li>
+<li><input disabled="" type="checkbox"> 교사 로그인과 실시간 연결이 성공했다.</li>
+<li><input disabled="" type="checkbox"> 새로고침 후 수업 자료가 남아 있다.</li>
+<li><input disabled="" type="checkbox"> 휴대폰 QR 입장과 마지막 획 또는 문제 완료를 확인했다.</li>
+<li><input disabled="" type="checkbox"> 게임 중단 후 방 코드로 다시 들어갈 수 있다.</li>
+<li><input disabled="" type="checkbox"> 완료 게임 기록이 새로고침 후에도 남아 있다.</li>
+<li><input disabled="" type="checkbox"> 비밀 키와 학생 기록을 GitHub 또는 공용 문서에 올리지 않았다.</li>
+</ul>
+<p><strong>모두 확인했다면 독립 설치 완료입니다.</strong> 실제 수업 전에는 해당 교실 Wi-Fi와 학생 기기로 추가 점검하세요. 이 체크리스트만으로 30대 휴대폰의 무지연 동작을 보장하지 않습니다.</p>
+</section><section class="sheet " id="section-18"><div class="page-tag"><span>HANJA CLASSROOM / 설치 워크북</span><span>19</span></div><h2>문제가 생겼을 때 확인 순서</h2>
+<h3>서버 연결이 계속 복구 중</h3>
+<ol>
+<li>Render 서비스가 Live인지 확인합니다.</li>
+<li><code>/health</code>에서 JSON 응답이 나오는지 확인합니다.</li>
+<li>Vercel <code>NEXT_PUBLIC_SERVER_URL</code>에 임시 주소가 남아 있지 않은지 봅니다.</li>
+<li>Render <code>WEB_ORIGIN</code>과 브라우저의 실제 Vercel 주소를 비교합니다.</li>
+<li>환경 변수 변경 후 재배포했는지 확인합니다.</li>
+</ol>
+<h3>로그인 메일이 오지 않음</h3>
+<ol>
+<li>이메일 오타와 스팸함을 확인합니다.</li>
+<li>기본 메일을 쓴다면 본인 Supabase 조직 팀에 등록된 주소인지 확인합니다.</li>
+<li>같은 시간에 반복 요청하지 않습니다. 기본 발송 제한을 확인합니다.</li>
+<li>Authentication 로그의 오류 문구를 확인합니다. 계정이나 링크를 공용 채팅에 공유하지 않습니다.</li>
+</ol>
+<h3>메일 링크가 다른 페이지로 이동</h3>
+<ol>
+<li>Site URL과 Redirect URLs가 본인의 프로덕션 웹 주소인지 확인합니다.</li>
+<li><code>localhost</code>나 강사의 주소가 남아 있는지 확인합니다.</li>
+<li>로그인 링크를 요청한 브라우저에서 열었는지 확인합니다.</li>
+</ol>
+<h3>폴더 또는 기록이 저장되지 않음</h3>
+<ol>
+<li>서버 응답과 DB 저장은 별개임을 기억합니다.</li>
+<li>통합 SQL을 끝까지 실행했는지 확인합니다.</li>
+<li>Render의 Supabase URL과 Secret/service_role 키가 같은 본인 프로젝트의 것인지 확인합니다.</li>
+<li>기록만 실패하면 랭킹 함수와 ID 시퀀스 권한까지 설치되었는지 확인합니다.</li>
+<li>새로고침을 반복하거나 표를 삭제하기 전에 오류 문구를 강사에게 보여줍니다.</li>
+</ol>
+</section><section class="sheet " id="section-19"><div class="page-tag"><span>HANJA CLASSROOM / 설치 워크북</span><span>20</span></div><h2>배포 실패와 도움 요청하기</h2>
+<h3>Vercel 배포 실패</h3>
+<p><strong>Deployments → 실패 배포 → Build Logs</strong>에서 처음 발생한 오류를 확인합니다. 03단계의 Root Directory, Build Command, Install Command, Output Directory를 비교합니다. 오류를 해결하지 않은 상태에서 같은 배포 버튼만 반복하지 마세요.</p>
+<h3>Render 배포 실패</h3>
+<p>서비스의 <strong>Logs / Events</strong>에서 첫 오류를 확인합니다. 본인 Fork의 <code>render.yaml</code>, main 브랜치, 네 환경 변수의 이름과 값을 확인합니다. Secret 키 대신 Publishable 키를 넣었는지도 봅니다.</p>
+<h3>강사에게 보여줄 내용</h3>
+<pre><code class="language-text">멈춘 단계: 예 04 Render
+현재 상태: 예 Deploy failed
+오류 문구: 비밀값을 지운 첫 오류
+마지막으로 한 일: 예 환경 변수 저장
+</code></pre>
+<p><strong>보여주지 않을 내용:</strong> Secret/service_role 키, DB 비밀번호, 로그인 링크 전체, 접근 토큰, 실제 학생 명단.</p>
+<p>키가 노출되었다면 캡처만 지우는 것으로 끝내지 말고 해당 서비스에서 키를 폐기·교체하고 서버 환경 변수도 갱신해야 합니다. 강사에게 키 자체를 보내지는 않습니다.</p>
+<p>강의에서 해결이 오래 걸리면 현재 단계를 기록하고 짝의 화면으로 실습을 이어갑니다. 본인의 프로젝트를 삭제하고 처음부터 다시 시작하지 않습니다.</p>
+</section><section class="sheet " id="section-20"><div class="page-tag"><span>HANJA CLASSROOM / 설치 워크북</span><span>21</span></div><h2>강의 뒤 운영과 업데이트</h2>
+<h3>다음 수업 전</h3>
+<ul>
+<li>본인의 교사 웹 주소를 즐겨찾기에 등록합니다.</li>
+<li>Render가 대기 상태였다면 첫 기동을 기다리고 실시간 연결을 확인합니다.</li>
+<li>수업 폴더를 확인하고 휴대폰으로 짧게 시험합니다.</li>
+<li>학교 Wi-Fi의 접속 제한, 휴대폰 진동·키보드, 동시 접속 환경을 확인합니다.</li>
+<li>무료 서비스의 Usage와 Billing을 주기적으로 확인합니다. 무료 서비스가 상시 실행이나 전달 지연을 보장하지는 않습니다.</li>
+</ul>
+<h3>원본 개선 받기</h3>
+<ol>
+<li>수업 중이 아닐 때 원본의 변경 안내와 DB 마이그레이션 필요 여부를 먼저 읽습니다.</li>
+<li>내 Fork의 <strong>Sync fork → Update branch</strong>로 변경을 받습니다.</li>
+<li>Vercel과 Render의 배포 상태를 확인합니다. 웹 전용 업데이트는 Render 재배포가 생략될 수 있습니다.</li>
+<li>DB 변경이 필요한 버전이면 안내된 마이그레이션을 추가로 적용합니다. GitHub 동기화가 DB까지 자동 변경하지는 않습니다.</li>
+<li>짧은 시험 게임과 기록 저장을 다시 확인합니다.</li>
+</ol>
+<p>내가 코드를 수정해 충돌이 나면 <strong>Discard commits</strong>를 누르지 말고 도움을 요청합니다. 환경 변수나 DB 데이터는 Fork 동기화로 강사 값으로 바뀌어서는 안 됩니다.</p>
+<p>원본과 데이터 라이선스 및 <code>THIRD_PARTY_NOTICES.md</code>는 유지합니다. 이 자료는 프로젝트를 새로 공개하거나 기존 학생 기록을 이전하는 지시가 아닙니다.</p>
+</section><section class="sheet " id="section-21"><div class="page-tag"><span>HANJA CLASSROOM / 설치 워크북</span><span>22</span></div><h2>공식 도움말과 자료 구성</h2>
+<p>메뉴 위치가 달라졌을 때는 아래 공식 도움말을 참고합니다. 요금·플랜·인증 정책은 강의 직전에 다시 확인하세요.</p>
+<ul>
+<li><a href="https://docs.github.com/en/pull-requests/how-tos/work-with-forks/fork-a-repo">GitHub Fork</a></li>
+<li><a href="https://supabase.com/docs/guides/getting-started/api-keys">Supabase API 키</a></li>
+<li><a href="https://supabase.com/docs/guides/auth/redirect-urls">Supabase 로그인 반환 주소</a></li>
+<li><a href="https://supabase.com/docs/guides/auth/auth-smtp">Supabase 기본 메일 제한과 SMTP</a></li>
+<li><a href="https://vercel.com/docs/project-configuration">Vercel 프로젝트 설정</a></li>
+<li><a href="https://vercel.com/docs/environment-variables">Vercel 환경 변수</a></li>
+<li><a href="https://render.com/docs/infrastructure-as-code">Render Blueprint</a></li>
+<li><a href="https://render.com/docs/blueprint-spec">Render Blueprint 환경 변수</a></li>
+<li><a href="https://render.com/docs/free">Render 무료 서비스</a></li>
+</ul>
+<p>함께 제공되는 자료:</p>
+<ul>
+<li><code>participant-manual.html</code> 복사 버튼이 있는 웹 매뉴얼</li>
+<li><code>participant-manual.pdf</code> 인쇄와 배포용 매뉴얼</li>
+<li><code>install-new-project.sql</code> 새 Supabase 프로젝트용 통합 설정</li>
+<li><code>instructor-guide.html</code> 50분 진행표와 사전 점검</li>
+<li><code>video-storyboard.html</code> 72초 리릭모션 영상 구성 검토안</li>
+</ul>
+<p>설치 자료에는 실제 학생 기록이나 비밀 키가 포함되지 않습니다. 별도의 설치 도우미가 모든 계정을 자동 생성하는 구조도 아닙니다. 서비스 가입과 승인, 본인 키 입력은 수강자가 직접 수행합니다.</p>
+</section></main></div><div class="toast" role="status" aria-live="polite"></div><script>
+const toast=document.querySelector('.toast');let tid;
+document.querySelectorAll('input[type="checkbox"]').forEach(input=>{input.disabled=false;input.setAttribute('aria-label',input.parentElement.textContent.trim());input.parentElement.style.listStyle='none'});
+document.querySelectorAll('pre').forEach(pre=>{const button=document.createElement('button');button.className='copy';button.textContent='복사';button.type='button';button.addEventListener('click',async()=>{const code=pre.querySelector('code');try{if(!navigator.clipboard)throw new Error('clipboard');await navigator.clipboard.writeText(code.textContent);button.textContent='복사됨';toast.textContent='복사했습니다. 본인 서비스의 해당 칸에 붙여 넣으세요.';clearTimeout(tid);tid=setTimeout(()=>{toast.textContent='';button.textContent='복사'},2300)}catch{const range=document.createRange();range.selectNodeContents(code);const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);toast.textContent='복사할 내용을 선택했습니다. Ctrl+C를 누르세요.'}});pre.append(button)});
+document.querySelectorAll('[data-print]').forEach(b=>b.addEventListener('click',()=>window.print()));
+</script></body></html>

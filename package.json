@@ -1,0 +1,29 @@
+{
+  "name": "hanja-stroke-battle",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build:packages && npm run build -w @hanja/server && npm run build -w @hanja/web",
+    "build:packages": "npm run build -w @hanja/contracts && npm run build -w @hanja/stroke-engine",
+    "predev": "npm run build:packages",
+    "dev": "concurrently -n server,web -c green,cyan \"npm run dev -w @hanja/server\" \"npm run dev -w @hanja/web\"",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "pretest:run": "npm run build:packages",
+    "test:run": "npm run test:run --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "verify": "npm run typecheck && npm run lint && npm run test:run && npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "latest",
+    "typescript": "latest",
+    "vitest": "latest"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

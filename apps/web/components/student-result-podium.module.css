@@ -1,0 +1,24 @@
+.podium { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: end; gap: 8px; padding-top: 12px; isolation: isolate; }
+.place { --medal: #647e79; --stand: #e4efeb; display: flex; min-width: 0; flex-direction: column; align-items: center; color: var(--medal); animation: rise 480ms cubic-bezier(.2,.8,.2,1) both; }
+.rank1 { --medal: #ae791a; --stand: #ffedb7; animation-delay: 100ms; }
+.rank3 { --medal: #a56b44; --stand: #f5e4d7; animation-delay: 50ms; }
+.medal { position: relative; width: 51px; height: 51px; margin-bottom: 7px; border: 1px solid currentColor; border-radius: 50%; background: #fff; box-shadow: 0 3px 0 #143b2b0a, 0 6px 12px #143b2b0a; }
+.rank1 .medal { width: 59px; height: 59px; border-width: 2px; box-shadow: 0 0 0 5px #fff5d8, 0 9px 14px #ad7c2116; }
+.medal > svg:not(.crown) { width: 100%; height: 100%; }
+.crown { position: absolute; top: -22px; left: 50%; width: 35px; height: 26px; transform: translateX(-50%) rotate(-6deg); color: #e3b13b; }
+.winners { width: 100%; display: grid; gap: 10px; margin-bottom: 10px; color: #1b4a36; }
+.winner { display: grid; gap: 5px; text-align: center; }
+.winner strong { font-size: 13px; line-height: 1.3; overflow-wrap: anywhere; }
+.winner strong small { display: inline-block; margin-left: 3px; padding: 2px 4px; border-radius: 5px; background: #e4f5e9; color: #18784e; font-size: 8px; vertical-align: middle; }
+.winner > span { font-size: 18px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.winner > span small { margin-left: 1px; font-size: 9px; color: #749083; }
+.moreWinners { color: #627e6d; font-size: 10px; font-weight: 700; line-height: 1.4; text-align: center; }
+.srOnly { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.stand { display: grid; place-items: center; width: 100%; height: 52px; border: 1px solid #ffffffb3; border-radius: 13px 13px 7px 7px; background: var(--stand); box-shadow: 0 5px 0 color-mix(in srgb, var(--stand), #365b45 12%); }
+.rank1 .stand { height: 72px; }
+.rank3 .stand { height: 40px; }
+.stand > span { color: var(--medal); font-size: 23px; font-weight: 850; }
+.stand small { margin-left: 2px; font-size: 10px; }
+.empty { width: 100%; }
+@keyframes rise { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) { .place { animation: none; } }

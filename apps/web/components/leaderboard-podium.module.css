@@ -1,0 +1,128 @@
+.podium {
+  position: relative;
+  isolation: isolate;
+  margin: 8px 0 20px;
+  padding: 36px 24px 0;
+  overflow: hidden;
+  border: 1px solid #e5e9e4;
+  border-radius: 28px;
+  background: radial-gradient(ellipse at 50% 0%, #fff8dd 0%, transparent 57%), linear-gradient(180deg, #fbfcf9, #f3f6f0);
+}
+
+.stage {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: end;
+  gap: 12px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.place {
+  --ink: #665023;
+  --medal: #ffe89c;
+  --medal-light: #fff8d9;
+  --stand-top: #edcf72;
+  --stand-bottom: #dfb94f;
+  --stand-height: 142px;
+  --delay: 220ms;
+  min-width: 0;
+  grid-row: 1;
+  text-align: center;
+  animation: arrive 650ms cubic-bezier(.16, 1, .3, 1) var(--delay) both;
+}
+
+.rank1 { grid-column: 2; }
+.rank2 {
+  --ink: #405d69;
+  --medal: #d5e3e9;
+  --medal-light: #f2f8fa;
+  --stand-top: #d6e2e7;
+  --stand-bottom: #bcced6;
+  --stand-height: 100px;
+  --delay: 100ms;
+  grid-column: 1;
+}
+.rank3 {
+  --ink: #7f4e30;
+  --medal: #efd2ba;
+  --medal-light: #fff1e5;
+  --stand-top: #eac8ad;
+  --stand-bottom: #d9ac89;
+  --stand-height: 74px;
+  --delay: 0ms;
+  grid-column: 3;
+}
+
+.winners { display: grid; justify-items: center; gap: 12px; padding: 14px 4px 20px; min-width: 0; }
+.medallion {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  border: 4px solid var(--medal-light);
+  border-radius: 50%;
+  color: var(--ink);
+  background: linear-gradient(145deg, var(--medal-light), var(--medal));
+  box-shadow: 0 0 0 1px var(--medal), 0 8px 16px #273d3310;
+  animation: celebrate 750ms ease-out calc(var(--delay) + 280ms) both;
+}
+.rank1 .medallion { width: 102px; height: 102px; }
+.face { width: 100%; height: 100%; }
+.crown { position: absolute; width: 43px; height: 29px; top: -27px; left: 50%; transform: translateX(-50%) rotate(-8deg); color: #d29a23; }
+.rankLabel { color: var(--ink); background: var(--medal-light); border: 1px solid var(--medal); border-radius: 99px; padding: 3px 11px; font-size: 12px; font-weight: 800; line-height: 1.5; }
+.players { width: 100%; display: grid; gap: 16px; }
+.player { min-width: 0; display: grid; justify-items: center; gap: 6px; }
+.player + .player { border-top: 1px solid #203a2412; padding-top: 12px; }
+.nickname { max-width: 100%; font-size: clamp(17px, 2vw, 23px); line-height: 1.35; font-weight: 800; overflow-wrap: anywhere; color: #1b3028; }
+.score { max-width: 100%; color: #176c52; font-size: clamp(24px, 3vw, 36px); font-weight: 850; line-height: 1.1; letter-spacing: -.035em; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.score small { margin-left: 2px; color: #52665a; font-size: 12px; font-weight: 650; letter-spacing: 0; }
+.games { font-size: 12px; line-height: 1.4; color: #637469; }
+.stand {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: var(--stand-height);
+  border-radius: 15px 15px 0 0;
+  border: 1px solid #ffffff70;
+  border-bottom: 0;
+  color: var(--ink);
+  background: linear-gradient(180deg, var(--stand-top), var(--stand-bottom));
+  box-shadow: inset 0 5px 0 #ffffff35, inset -7px 0 0 #00000004;
+}
+.stand > span { position: relative; z-index: 1; font-size: 48px; font-weight: 850; line-height: 1; opacity: .85; }
+.stand > svg { position: absolute; width: 108px; height: 61px; opacity: .18; }
+.confetti { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.confetti i { position: absolute; top: 8%; width: 5px; height: 10px; border-radius: 2px; opacity: 0; background: #d7aa3e; animation: confetti 1300ms ease-out both; }
+.confetti i:nth-child(3n) { background: #51a18b; }
+.confetti i:nth-child(3n + 1) { background: #abc0d5; width: 7px; height: 7px; border-radius: 50%; }
+.srOnly { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+
+@keyframes arrive { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes celebrate { 0%, 100% { transform: translateY(0) rotate(0); } 40% { transform: translateY(-9px) rotate(-5deg); } 70% { transform: translateY(-2px) rotate(3deg); } }
+@keyframes confetti { 0% { opacity: 0; transform: translate(0, -12px) rotate(0); } 15% { opacity: .8; } 100% { opacity: 0; transform: translate(var(--drift), 210px) rotate(var(--turn)); } }
+
+@media (max-width: 600px) {
+  .podium { border-radius: 20px; padding: 28px 8px 0; }
+  .stage { gap: 6px; }
+  .place { --stand-height: 104px; }
+  .rank2 { --stand-height: 76px; }
+  .rank3 { --stand-height: 56px; }
+  .winners { gap: 9px; padding: 12px 2px 14px; }
+  .medallion { width: 54px; height: 54px; border-width: 3px; }
+  .rank1 .medallion { width: 64px; height: 64px; }
+  .crown { width: 31px; height: 22px; top: -21px; }
+  .rankLabel { font-size: 11px; padding: 2px 8px; }
+  .nickname { font-size: 15px; }
+  .score { font-size: 25px; }
+  .score small, .games { font-size: 10px; }
+  .stand { border-radius: 10px 10px 0 0; }
+  .stand > span { font-size: 34px; }
+  .stand > svg { width: 72px; height: 46px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .place, .medallion, .confetti i { animation: none; }
+  .confetti { display: none; }
+}

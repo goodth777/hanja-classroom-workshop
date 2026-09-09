@@ -1,0 +1,93 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>강사용 진행 가이드</title><style>
+:root{--ink:#18372e;--green:#11644e;--muted:#60746d;--line:#d8e6df;--soft:#eff7f3;--paper:#fff;--amber:#fff3d6}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:#eaf2ee;color:var(--ink);font:16px/1.8 'Malgun Gothic','맑은 고딕',sans-serif;word-break:keep-all;overflow-wrap:anywhere}a{color:var(--green);text-underline-offset:3px}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #cf9520;outline-offset:4px}button,summary{cursor:pointer}button{font:inherit}.shell{display:grid;grid-template-columns:270px minmax(0,1fr);max-width:1450px;margin:auto;gap:30px;padding:28px}.rail{position:sticky;top:28px;align-self:start;max-height:calc(100vh - 56px);overflow:auto;padding:14px 12px 24px}.brand{font-size:13px;letter-spacing:.15em;font-weight:800;color:var(--green)}.rail h2{font-size:23px;line-height:1.4;margin:10px 0 20px}.rail a{display:block;font-size:12px;line-height:1.6;padding:6px 8px;text-decoration:none;border-radius:6px}.rail a:hover{background:#dcebe3}.rail .tools{border-top:1px solid var(--line);padding-top:12px;margin-top:15px}.print-button,.copy{border:1px solid var(--line);border-radius:7px;background:white;color:var(--green);font-weight:700}.print-button{padding:9px 12px;margin:10px 0}main{min-width:0;max-width:960px}.sheet{background:var(--paper);padding:48px 54px;margin:0 0 24px;border-radius:18px;box-shadow:0 3px 16px #0d372609;scroll-margin-top:20px}.page-tag{font-size:10px;letter-spacing:.13em;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:24px;display:flex;justify-content:space-between}.sheet h1{font-size:43px;line-height:1.3;letter-spacing:-.04em;max-width:650px;margin:30px 0}.sheet h2{font-size:27px;line-height:1.35;letter-spacing:-.035em;margin:0 0 24px}.sheet h3{font-size:19px;margin:25px 0 10px}.sheet p{margin:12px 0}.sheet ul,.sheet ol{padding-left:24px;margin:13px 0}.sheet li{padding-left:3px;margin:7px 0}.sheet strong{color:#103e2f}.sheet blockquote{border-left:4px solid #dba53c;background:var(--amber);margin:20px 0;padding:12px 18px;font-size:14px}.sheet blockquote p{margin:0}.sheet table{width:100%;border-collapse:collapse;font-size:13px;margin:18px 0;table-layout:fixed}.sheet th{background:var(--soft);color:var(--green);text-align:left}.sheet th,.sheet td{border-bottom:1px solid var(--line);padding:9px 10px;vertical-align:top;overflow-wrap:anywhere;word-break:normal}.sheet td:first-child{font-weight:700}.sheet pre{background:#f2f6f4;border:1px solid var(--line);border-radius:8px;padding:16px;margin:14px 0;position:relative;white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-all;font-size:12px;line-height:1.65;max-height:500px;overflow:auto}.sheet pre:has(.copy){padding-top:46px}code{font-family:Consolas,'Malgun Gothic',monospace;font-size:.92em;color:#225341}.copy{position:absolute;right:8px;top:7px;padding:3px 10px;font-size:11px}.sheet details{border:1px solid var(--line);border-radius:8px;padding:12px;margin-top:15px}.sheet summary{font-weight:700;color:var(--green)}.sheet input[type=checkbox]{accent-color:var(--green)}.cover{border-top:8px solid var(--green);min-height:700px}.cover p:first-of-type{font-size:23px;font-weight:700}.cover:after{content:'00 준비 → 01 코드 → 02 저장소 → 03 웹 → 04 서버 → 05 연결 → 06 확인';display:block;margin-top:40px;border-top:1px solid var(--line);padding-top:22px;font-size:12px;font-weight:700;color:var(--green)}.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#123e31;color:white;padding:10px 20px;border-radius:30px;font-size:14px;z-index:10}.toast:empty{display:none}.print-note{display:none}
+@media(max-width:950px){.shell{grid-template-columns:1fr;padding:14px;gap:10px}.rail{position:static;max-height:220px;padding:10px}.rail nav{display:grid;grid-template-columns:1fr 1fr}.rail h2{margin:0 0 6px}.rail .tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center}.sheet{padding:28px 22px;border-radius:12px}.sheet h1{font-size:34px}.sheet h2{font-size:25px}.sheet table{font-size:11px}.sheet th,.sheet td{padding:7px 6px}}
+@page{size:A4;margin:15mm 16mm 17mm}
+@media print{html{scroll-behavior:auto}body{background:white;font-size:10pt;line-height:1.67;color:#17382d}.shell{display:block;padding:0;max-width:none}.rail,.copy,.toast,.sql-appendix{display:none!important}main{max-width:none}.sheet{border-radius:0;box-shadow:none;padding:0;margin:0;break-after:page;min-height:0}.sheet:last-child{break-after:auto}.page-tag{font-size:7pt;margin-bottom:6mm;padding-bottom:3mm}.sheet h1{font-size:30pt;margin:12mm 0 8mm}.sheet h2{font-size:20pt;margin:0 0 6mm}.sheet h3{font-size:12pt;margin:5mm 0 2mm}.sheet p{margin:2.5mm 0}.sheet ul,.sheet ol{margin:3mm 0;padding-left:6mm}.sheet li{margin:1.8mm 0}.sheet table{font-size:8pt;margin:4mm 0;line-height:1.5}.sheet th,.sheet td{padding:2mm 2.5mm}.sheet blockquote{font-size:9pt;margin:4mm 0;padding:3mm 4mm}.sheet pre,.sheet pre:has(.copy){padding:3mm;margin:3mm 0;font-size:8pt;max-height:none;overflow:visible;line-height:1.5}.sheet h2,.sheet h3{break-after:avoid}.sheet table,.sheet pre,.sheet blockquote,.sheet li{break-inside:avoid}.cover{border-top:3mm solid var(--green);padding-top:5mm}.cover p:first-of-type{font-size:16pt}.cover:after{margin-top:20mm;font-size:9pt;padding-top:6mm}.sheet a{color:inherit;text-decoration:none}.print-note{display:block;font-size:8pt;color:#62766d}}
+</style></head><body><div class="shell"><aside class="rail"><div class="brand">HANJA CLASSROOM</div><h2>강사용 진행 가이드</h2><nav><a href="#section-0">50분 한자 게임 독립 설치 강의 진행안</a><a href="#section-1">강의 목표와 전제</a><a href="#section-2">강의 전 준비</a><a href="#section-3">50분 진행표</a><a href="#section-4">화면에서 같은 말을 사용하기</a><a href="#section-5">강사만 기억할 위험 지점</a><a href="#section-6">영상 확인 후 제작 범위</a></nav><div class="tools"><a href="index.html">자료 전체 보기</a><a href="install-new-project.sql" download>통합 SQL 내려받기</a><button class="print-button" data-print>인쇄 / PDF로 저장</button></div></aside><main><section class="sheet cover" id="section-0"><div class="page-tag"><span>HANJA CLASSROOM / 설치 워크북</span><span>01</span></div><h1>50분 한자 게임 독립 설치 강의 진행안</h1>
+<p>20명 · 2인 1조 · 개인별 서비스와 빈 데이터베이스</p>
+</section><section class="sheet " id="section-1"><div class="page-tag"><span>HANJA CLASSROOM / 설치 워크북</span><span>02</span></div><h2>강의 목표와 전제</h2>
+<p>목표는 모든 수강자가 강사의 배포 주소를 공동 사용하는 것이 아니라, 자신의 Fork와 Supabase와 Vercel과 Render로 독립 앱을 운영하는 것입니다. 강사의 학생 기록은 제공하지 않습니다.</p>
+<p>사전 준비는 참여자 매뉴얼 00–04단계입니다. 처음 가입부터 실제 게임까지 50분에 전원이 완료한다고 약속하지 않습니다. 보조 진행자 1명을 권장합니다.</p>
+</section><section class="sheet " id="section-2"><div class="page-tag"><span>HANJA CLASSROOM / 설치 워크북</span><span>03</span></div><h2>강의 전 준비</h2>
+<ul>
+<li>3일 전: 매뉴얼, 가입 안내, 원본 저장소 접근 방법을 전달합니다.</li>
+<li>1일 전: 준비 완료 또는 막힌 단계만 확인합니다. 비밀 키, 비밀번호, 로그인 링크를 수집하지 않습니다.</li>
+<li>강사용 시연 프로젝트는 별도로 준비합니다. 실제 학생 정보가 있는 운영 대시보드를 투사하지 않습니다.</li>
+<li>수강자가 본인 Fork에 접근하고 두 배포 서비스가 그 Fork를 선택하는지 점검합니다.</li>
+<li>초보자 1–2명에게 원본 접근부터 새 프로젝트 설치까지 사전 리허설을 요청합니다.</li>
+<li>기준 버전을 정하고 강의 직전 main에 검증되지 않은 기능을 추가하지 않습니다.</li>
+<li>SMTP 제한, 무료 서버 첫 기동, GitHub 앱 권한 때문에 막힐 수 있는 사례를 준비합니다.</li>
+<li>원본 저장소와 과거 커밋의 실제 기록·비밀값 노출 여부를 배포 전에 별도로 점검합니다. 이 매뉴얼 작성이 전체 보안 감사의 완료를 뜻하지는 않습니다.</li>
+</ul>
+</section><section class="sheet " id="section-3"><div class="page-tag"><span>HANJA CLASSROOM / 설치 워크북</span><span>04</span></div><h2>50분 진행표</h2>
+<table>
+<thead>
+<tr>
+<th>시간</th>
+<th>진행</th>
+<th>강사의 확인 질문</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>00–02</td>
+<td>72초 도입 영상과 목표 안내</td>
+<td>각자 자기 서비스에 설치한다는 점이 보이나요</td>
+</tr>
+<tr>
+<td>02–05</td>
+<td>00–04 사전 준비 상태 확인</td>
+<td>어디까지 완료했나요</td>
+</tr>
+<tr>
+<td>05–15</td>
+<td>05 웹과 서버 주소 연결</td>
+<td>임시 주소가 실제 주소로 바뀌었나요</td>
+</tr>
+<tr>
+<td>15–23</td>
+<td>로그인과 폴더 저장 확인</td>
+<td>새로고침해도 폴더가 남아 있나요</td>
+</tr>
+<tr>
+<td>23–38</td>
+<td>10개 조로 역할 교대 실습</td>
+<td>QR 입장부터 결과까지 확인했나요</td>
+</tr>
+<tr>
+<td>38–45</td>
+<td>기록 저장과 문제 해결</td>
+<td>완료 게임이 기록에 남았나요</td>
+</tr>
+<tr>
+<td>45–50</td>
+<td>운영과 업데이트 안내 및 질문</td>
+<td>다음 수업 때 사용할 주소를 저장했나요</td>
+</tr>
+</tbody></table>
+<p>배포 대기 중에는 다음 설정의 목적을 설명합니다. 앞선 분에게 임의의 추가 업데이트나 여러 방 동시 생성을 시키지 않습니다.</p>
+</section><section class="sheet " id="section-4"><div class="page-tag"><span>HANJA CLASSROOM / 설치 워크북</span><span>05</span></div><h2>화면에서 같은 말을 사용하기</h2>
+<p>영상, 매뉴얼, 설명의 번호를 통일합니다.</p>
+<p><strong>01 코드 → 02 데이터 → 03 웹 → 04 서버 → 05 연결 → 06 확인</strong></p>
+<p>단계가 끝날 때는 “여기까지 됐나요” 대신 구체적인 성공 기준을 묻습니다. 성공한 사람은 다음 버튼을 누르지 말고 대기하도록 안내합니다.</p>
+<p>실패한 경우: 단계 번호 기록 → 보조 진행자가 확인 → 오래 걸리면 짝 화면으로 실습 참여 → 강의 뒤 본인 환경 마무리.</p>
+</section><section class="sheet " id="section-5"><div class="page-tag"><span>HANJA CLASSROOM / 설치 워크북</span><span>06</span></div><h2>강사만 기억할 위험 지점</h2>
+<ul>
+<li>Fork는 코드 사본입니다. Supabase 데이터, 서비스 환경 변수, 로그인 계정은 복사되지 않습니다.</li>
+<li>/health 정상은 저장 정상의 증거가 아닙니다. 폴더와 완료 게임 기록을 실제로 저장해야 합니다.</li>
+<li>통합 SQL에는 최신 랭킹 함수와 ID 시퀀스 권한이 포함되어야 합니다.</li>
+<li>첫 Vercel의 임시 서버 주소는 실제 Render 주소로 바꾸고 재배포합니다.</li>
+<li>기본 로그인 메일은 조직 팀 주소 및 발송량 제한이 있습니다. 반복 발송을 지시하지 않습니다.</li>
+<li>실제 휴대폰 진동과 키보드 동작을 PC 시뮬레이션 결과로 보장하지 않습니다.</li>
+<li>기존 운영 프로젝트 삭제, 공개 전환, RLS 해제, demo 인증 사용은 실습 해결책이 아닙니다.</li>
+</ul>
+</section><section class="sheet " id="section-6"><div class="page-tag"><span>HANJA CLASSROOM / 설치 워크북</span><span>07</span></div><h2>영상 확인 후 제작 범위</h2>
+<p>사용자 선택: 60–75초 가로 영상, 구성과 문구 먼저 검토, 승인된 구성으로 초안 일괄 제작.</p>
+<p>현재 검토안은 72초입니다. 큰 한국어 글자와 여섯 단계 연결만 보여주고 세부 설정 이름과 키는 영상에서 읽게 하지 않습니다. 실제 서비스 화면을 흉내 낸 스크린샷도 쓰지 않습니다.</p>
+<p>음성 내레이션은 넣지 않는 안을 제안합니다. 배경음은 아직 확정하지 않았습니다. 조용한 배경음 또는 무음 중 선택 후 제작하며, 상업 음원이나 권리 불명 음악을 임의로 삽입하지 않습니다.</p>
+</section></main></div><div class="toast" role="status" aria-live="polite"></div><script>
+const toast=document.querySelector('.toast');let tid;
+document.querySelectorAll('input[type="checkbox"]').forEach(input=>{input.disabled=false;input.setAttribute('aria-label',input.parentElement.textContent.trim());input.parentElement.style.listStyle='none'});
+document.querySelectorAll('pre').forEach(pre=>{const button=document.createElement('button');button.className='copy';button.textContent='복사';button.type='button';button.addEventListener('click',async()=>{const code=pre.querySelector('code');try{if(!navigator.clipboard)throw new Error('clipboard');await navigator.clipboard.writeText(code.textContent);button.textContent='복사됨';toast.textContent='복사했습니다. 본인 서비스의 해당 칸에 붙여 넣으세요.';clearTimeout(tid);tid=setTimeout(()=>{toast.textContent='';button.textContent='복사'},2300)}catch{const range=document.createRange();range.selectNodeContents(code);const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);toast.textContent='복사할 내용을 선택했습니다. Ctrl+C를 누르세요.'}});pre.append(button)});
+document.querySelectorAll('[data-print]').forEach(b=>b.addEventListener('click',()=>window.print()));
+</script></body></html>

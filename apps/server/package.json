@@ -1,0 +1,29 @@
+{
+  "name": "@hanja/server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@hanja/contracts": "*",
+    "@hanja/stroke-engine": "*",
+    "cors": "latest",
+    "express": "latest",
+    "hanzi-writer-data": "2.0.1",
+    "socket.io": "latest"
+  },
+  "devDependencies": {
+    "@types/cors": "latest",
+    "@types/express": "latest",
+    "@types/node": "latest",
+    "socket.io-client": "latest",
+    "tsx": "latest"
+  }
+}

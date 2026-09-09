@@ -1,0 +1,103 @@
+.experience {
+  --student-forest: #075e48;
+  --student-mint: #edf8f3;
+  --student-border: #d4e7de;
+  color: #15392f;
+}
+
+.experience :global(.studentHeader) { gap: 10px; }
+.experience :global(.studentHeader > div:first-child) { min-width: 0; }
+.experience :global(.studentHeader > div:first-child strong) { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.experience :global(.brandStamp) { flex-shrink: 0; background: #075e48; color: #fff; border: 1px solid #197c63; box-shadow: 0 3px 0 #064a39, 0 7px 14px #064a3914; transform: rotate(-5deg); }
+.experience :global(.statusPill) { flex-shrink: 0; background: #ffffffb8; border-color: #d4e7de; box-shadow: none; }
+.experience :global(.turnSoundButton) { min-width: 44px; min-height: 44px; border-color: var(--student-border); box-shadow: 0 3px 0 #d9e9e2; }
+.experience :global(.surface) { border: 1px solid #fff; background: #ffffffed; box-shadow: 0 14px 36px #194d3c0b; }
+.experience :global(.primaryButton) { border: 1px solid #08674f; background: #09684f; color: #fff; box-shadow: 0 4px 0 #064c3b, 0 7px 12px #064c3b14; transition: transform 140ms ease, box-shadow 140ms ease; }
+.experience :global(.primaryButton:not(:disabled):active) { transform: translateY(3px); box-shadow: 0 1px 0 #064c3b; }
+.experience :global(.primaryButton:disabled) { border-color: #b6c6bf; background: #a0b3aa; box-shadow: 0 3px 0 #d8e3dd; }
+.experience :global(.secondaryButton) { border-color: var(--student-border); background: #fff; box-shadow: 0 2px 0 #e0ebe5; }
+.experience :global(button:focus-visible), .experience :global(summary:focus-visible) { outline: 3px solid #149470; outline-offset: 3px; }
+.experience :global(.notice) { color: #607b70; }
+
+.experience :global(.joinCard), .experience :global(.waitingCard), .experience :global(.roomClosedCard) { border-radius: 30px; padding: 24px; }
+.experience :global(.joinCard h1), .experience :global(.waitingCard h1) { font-size: clamp(27px, 7.3vw, 35px); letter-spacing: -.045em; line-height: 1.25; }
+.experience :global(.roomMiniTag) { color: #316f59; background: #edf7f1; letter-spacing: .02em; }
+.experience :global(.joinIllustration) { height: 162px; perspective: 600px; margin: 4px 0 14px; }
+.experience :global(.joinIllustration strong), .experience :global(.joinIllustration span) { display: grid; place-items: center; width: 100px; height: 112px; border-radius: 24px; border: 1px solid #fff; font-family: "Batang", serif; }
+.experience :global(.joinIllustration strong) { font-size: 72px; color: #fff; background: linear-gradient(140deg, #218a6a, #075c46); box-shadow: 0 7px 0 #084e3d, 0 19px 23px #1b604a25; transform: rotate(-7deg) rotateY(-12deg); }
+.experience :global(.joinIllustration span) { font-size: 53px; color: #4b8b74; background: #deeee4; box-shadow: 0 5px 0 #cadaD0; }
+.experience :global(.joinIllustration span:first-child) { transform: translate(-76px, 13px) rotate(-17deg) rotateY(15deg) scale(.76); }
+.experience :global(.joinIllustration span:nth-child(2)) { transform: translate(78px, 10px) rotate(15deg) rotateY(-15deg) scale(.76); }
+.experience :global(.joinCard input) { border-color: #d5e6dd; background: #f5faf7; font-weight: 650; }
+.experience :global(.joinCard .kicker) { color: #377d65; letter-spacing: .12em; }
+
+.lobbyMeta { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 32px; color: #4a7463; font-size: 11px; font-weight: 750; }
+.lobbyMeta span:first-child { display: inline-flex; align-items: center; gap: 6px; color: #06714c; }
+.lobbyMeta span:first-child::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #21b977; }
+.experience :global(.waitingGlyph) { position: relative; width: 142px; height: 142px; margin-bottom: 18px; border-radius: 31px; color: #096348; background: #e3f4ea; border: 1px solid #f6fffa; font-size: 91px; box-shadow: 0 7px 0 #cce4d7, 0 20px 32px #1764481a; transform: perspective(700px) rotateY(-10deg) rotate(-5deg); }
+.lobbyWord { margin: 0 0 26px; color: #438169; font-size: 15px; font-weight: 700; }
+.experience :global(.waitingCard .kicker) { font-size: 11px; color: #42836a; }
+.experience :global(.waitingCard h1) { margin-bottom: 24px; font-size: clamp(24px, 6.2vw, 29px); }
+.experience :global(.waitingPulse span) { background: #258968; }
+.experience :global(.waitingCard .notice) { margin-bottom: 0; font-size: 11px; }
+
+/* Dimensions and grid rows remain in the tested visualViewport layout. Only the
+   surface treatment changes here, so opening a real mobile keyboard still fits. */
+.experience :global(.studentQuizPanel) { border-color: #d9e9e0; box-shadow: 0 8px 24px #194d3c0a; }
+.experience :global(.studentGameHud) { color: #215f47; background: #f0f8f3; border-color: #d5e9dd; font-variant-numeric: tabular-nums; }
+.experience :global(.quizTimer) { background: #075b45; }
+.experience :global(.quizTimer i) { background: linear-gradient(90deg, #6ae2ad, #e8ef9a); }
+.experience :global(.quizPromptMobile) { background: #edf7f1; border-color: #d3e7dc; color: #164c38; box-shadow: inset 0 2px 0 #ffffffad; }
+.experience :global(.studentQuizChoices button) { border-color: #d6e5dc; background: #fff; color: #123f2f; box-shadow: 0 4px 0 #d9e8df; transition: transform 120ms ease, box-shadow 120ms ease, background-color 120ms ease; }
+.experience :global(.studentQuizChoices button:not(:disabled):active) { transform: translateY(3px); box-shadow: 0 1px 0 #d9e8df; }
+.experience :global(.studentQuizChoices button.selected) { border-color: #1b9d71; background: #e4f7ec; }
+.experience :global(.studentQuizChoices button.incorrect) { border-color: #de8596; color: #793c49; background: #fff0f3; box-shadow: 0 4px 0 #edcad2; }
+.experience :global(.studentQuizChoices button.correct) { color: #084d32; border: 2px solid #12a468; background: #c9f7dd; box-shadow: 0 4px 0 #92d8b2, 0 0 0 3px #2cb57522; }
+.experience :global(.studentQuizInputForm input) { border-color: #cce1d4; background: #fff; color: #153d2e; font-size: 22px; box-shadow: inset 0 2px 0 #f2f7f3; }
+.experience :global(.studentQuizInputForm input:focus) { border-color: #15976a; box-shadow: 0 0 0 3px #19a27419; }
+.experience :global(.quizReadingHint) { border-color: #d5e9dd; background: #f0faf4; }
+.experience :global(.miniGameFeedback) { border: 1px solid #c5e6d3; box-shadow: 0 16px 30px #0d583322; }
+
+.experience :global(.turnCallout) { border-width: 1px; border-radius: 20px; box-shadow: 0 4px 12px #174b3710; }
+.experience :global(.myTurnCallout) { border: 2px solid #138965; color: #075239; background: #e1f8ec; box-shadow: 0 0 0 3px #19ac7620, 0 6px 16px #174b3714; }
+.experience :global(.watchTurnCallout) { background: #fffffff2; border-color: #d6e7de; }
+.experience :global(.watchTurnCallout .turnBadge) { background: #eef4f0; color: #527365; }
+.experience :global(.turnClock) { background: #f0f8f2; }
+.experience :global(.myTurnCallout .turnClock) { background: #075e48; color: #fff; }
+.experience :global(.turnCallout.urgent .turnClock) { color: #8e2e1f; background: #ffe8e2; }
+.experience :global(.characterReading) { background: #eef8f1; border-color: #d5e9dd; }
+.experience :global(.mobileProgress > span) { color: #0c654b; background: #e1f0e7; box-shadow: 0 3px 0 #cedfd5; }
+.experience :global(.canvasSafe) { background: #fff; border-color: #d5e6dc; }
+.experience:global(.studentMyTurn) :global(.canvasSafe) { border-color: #1976df; }
+.experience :global(.wormGame) { border-color: #d8eade; background: #fcfffd; }
+.experience :global(.wormJoystick) { background: #dfefe5; border-color: #bddaca; }
+.experience :global(.wormJoystick > span) { background: #0b7151; }
+
+.result { padding: 22px 18px; }
+.result :global(.resultGlyph) { width: 66px; height: 66px; margin-bottom: 14px; border-radius: 19px; color: #0b664b; background: #e3f2e9; font-size: 42px; box-shadow: 0 4px 0 #cfe3d7; }
+.result :global(.kicker) { margin-bottom: 9px; font-size: 10px; letter-spacing: .15em; }
+.result h1 { margin: 0 0 16px; font-size: 28px; line-height: 1.2; letter-spacing: -.045em; }
+.result :global(.notice) { font-size: 11px; }
+.myResult { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin: 12px 0 20px; padding: 12px 15px; border: 1px solid #d0e8d9; border-radius: 16px; color: #105e3e; background: #eff9f2; font-size: 12px; font-weight: 750; }
+.myResult strong { margin-left: 5px; font-size: 25px; font-variant-numeric: tabular-nums; }
+.myResult > span:last-child:not(:first-child) { padding: 6px 10px; border-radius: 10px; background: #0a6d4c; color: #fff; font-size: 16px; }
+.allRanks { margin-top: 18px; padding: 0 12px; border: 1px solid #d8e7dd; border-radius: 15px; background: #fff; text-align: left; }
+.allRanks summary { min-height: 48px; padding: 14px 0; color: #285f47; font-size: 13px; font-weight: 750; cursor: pointer; }
+.allRanks summary span { float: right; color: #6c8576; font-size: 11px; }
+.allRanks :global(.scoreList) { padding-bottom: 12px; }
+.result :global(.scoreRow) { border-radius: 12px; background: #f3f8f4; }
+.result :global(.scoreRow.isSelf) { background: #e3f5e8; outline: 1px solid #a6d8bc; }
+.result :global(.nextRoomForm), .experience :global(.roomClosedCard .nextRoomForm) { background: #edf7f0; border-color: #d3e8da; border-radius: 19px; }
+.experience :global(.roomCodeEntry input) { min-width: 0; border-color: #d3e5d9; }
+
+@media (max-height: 600px) {
+  .experience :global(.joinCard) { padding: 18px; }
+  .experience :global(.joinIllustration) { height: 118px; margin: 0; }
+  .experience :global(.joinIllustration strong), .experience :global(.joinIllustration span) { width: 80px; height: 88px; font-size: 55px; border-radius: 20px; }
+  .experience :global(.studentQuizInputForm input) { font-size: 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience :global(.waitingPulse span), .experience :global(.miniGameFeedback), .experience :global(.studentQuizChoices button.correct), .experience :global(.flashTurn) { animation: none; }
+  .experience :global(.primaryButton), .experience :global(.studentQuizChoices button) { transition: none; }
+}

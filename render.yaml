@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: hanja-stroke-battle-server
+    runtime: node
+    plan: free
+    region: singapore
+    branch: main
+    autoDeploy: true
+    buildCommand: npm install --include=dev && npm run build:packages && npm run build -w @hanja/server
+    startCommand: npm run start -w @hanja/server
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: WEB_ORIGIN
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_PUBLISHABLE_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
